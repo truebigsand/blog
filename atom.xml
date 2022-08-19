@@ -3,11 +3,11 @@
   <title>真-大沙子的博客</title>
   
   
-  <link href="https://truebigsand.github.io/atom.xml" rel="self"/>
+  <link href="https://truebigsand.github.io/blog/atom.xml" rel="self"/>
   
-  <link href="https://truebigsand.github.io/"/>
+  <link href="https://truebigsand.github.io/blog/"/>
   <updated>2022-08-19T12:12:02.877Z</updated>
-  <id>https://truebigsand.github.io/</id>
+  <id>https://truebigsand.github.io/blog/</id>
   
   <author>
     <name>真-大沙子</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello world!</title>
-    <link href="https://truebigsand.github.io/2022/08/19/hello-world/"/>
-    <id>https://truebigsand.github.io/2022/08/19/hello-world/</id>
+    <link href="https://truebigsand.github.io/blog/2022/08/19/hello-world/"/>
+    <id>https://truebigsand.github.io/blog/2022/08/19/hello-world/</id>
     <published>2022-08-19T07:58:02.063Z</published>
     <updated>2022-08-19T12:12:02.877Z</updated>
     
