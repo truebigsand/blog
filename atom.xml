@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>真-大沙子的博客</title>
+  
+  
+  <link href="https://truebigsand.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://truebigsand.github.io/"/>
+  <updated>2022-08-19T12:12:02.877Z</updated>
+  <id>https://truebigsand.github.io/</id>
+  
+  <author>
+    <name>真-大沙子</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello world!</title>
+    <link href="https://truebigsand.github.io/2022/08/19/hello-world/"/>
+    <id>https://truebigsand.github.io/2022/08/19/hello-world/</id>
+    <published>2022-08-19T07:58:02.063Z</published>
+    <updated>2022-08-19T12:12:02.877Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h2><p>其实很早就想搞一个博客 但是没有找到合适的平台和方法<br>各种虚拟主机&#x2F;云服务器也捣鼓过一段时间（现在还在）<br>WordPress等框架也玩过<br>但是最终都因为钱包或者感到无聊就停了</p><p>现在因为想要contribute<a href="https://github.com/Crequency/KitX">某个项目</a> 进群问题是个人主页 然后就心血来潮整了这个博客</p><p>主要目的就是记录一些东西 不然等时间一长全都忘了<br>以前也写过一点东西 后来都找不到了<br>以后会不定期写点东西</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;关于这个博客&quot;&gt;&lt;a href=&quot;#关于这个博客&quot; class=&quot;headerlink&quot; title=&quot;关于这个博客&quot;&gt;&lt;/a&gt;关于这个博客&lt;/h2&gt;&lt;p&gt;其实很早就想搞一个博客 但是没有找到合适的平台和方法&lt;br&gt;各种虚拟主机&amp;#x2F;云服务器也捣鼓过一段时间</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
