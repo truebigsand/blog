@@ -249,11 +249,11 @@
     
     <tags>
       
+      <tag>技术</tag>
+      
       <tag>Gitee</tag>
       
       <tag>网站</tag>
-      
-      <tag>技术</tag>
       
     </tags>
     
@@ -318,7 +318,7 @@
     <link href="/blog/"/>
     <url>/blog/</url>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><!--<center>🚧🚧🚧建设中🚧🚧🚧</center>--><h2 id="真-大沙子喜欢的音乐"><a href="#真-大沙子喜欢的音乐" class="headerlink" title="真-大沙子喜欢的音乐"></a><a href="https://music.163.com/playlist?id=3119319371">真-大沙子喜欢的音乐</a></h2><!--    <div id="aplayer-SWSqsCgB" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3119319371" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"    ></div>-->    <div id="aplayer-bcsroHPw" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7623146451" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="114514px" data-preload="auto" data-theme="#ad7a86"    ></div>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><!--<center>🚧🚧🚧建设中🚧🚧🚧</center>--><h2 id="真-大沙子喜欢的音乐"><a href="#真-大沙子喜欢的音乐" class="headerlink" title="真-大沙子喜欢的音乐"></a><a href="https://music.163.com/playlist?id=3119319371">真-大沙子喜欢的音乐</a></h2><!--    <div id="aplayer-mcJTQKNm" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3119319371" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"    ></div>-->    <div id="aplayer-hucDJXrJ" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7623146451" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="114514px" data-preload="auto" data-theme="#ad7a86"    ></div>]]></content>
     
   </entry>
   
