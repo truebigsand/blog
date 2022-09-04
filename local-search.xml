@@ -249,9 +249,9 @@
     
     <tags>
       
-      <tag>Gitee</tag>
-      
       <tag>网站</tag>
+      
+      <tag>Gitee</tag>
       
       <tag>技术</tag>
       
@@ -278,9 +278,9 @@
     
     <tags>
       
-      <tag>网站</tag>
-      
       <tag>大事件</tag>
+      
+      <tag>网站</tag>
       
     </tags>
     
@@ -292,22 +292,33 @@
   
   
   <entry>
-    <title>音乐</title>
+    <title>about</title>
     <link href="/blog/"/>
     <url>/blog/</url>
     
-    <content type="html"><![CDATA[<center>🚧🚧🚧建设中🚧🚧🚧</center>]]></content>
+    <content type="html"><![CDATA[<h2 id="关于“真-大沙子”"><a href="#关于“真-大沙子”" class="headerlink" title="关于“真-大沙子”"></a>关于“真-大沙子”</h2><p>这个名字的来历要追溯到我刚「参与」互联网<br>也就是刚注册B站的时候<br>那是2018年的暑假<br>我不愿意自己在家 就被托付到一个同学家<br><del>记得那时候我还沉迷于抖音快手这种</del><br>受到那位同学的影响 我注册了B站账号 <del>并逐渐成为一个二刺螈</del><br>（不得不说 那时候B站的入站测试已经很简单了 做错的题还标出来让你回去重做）<br>注册总得有个名字 我不知为何突然就想起来之前那个同学给我看的一个MC视频<br>里面有个图 说什么大哲学家“真·大沙子”（<br>我就想拿这个做名字吧 有时间再想个 <del>后来成为我的网名并沿用至今</del><br>但是不知道是重名还是什么 导致把「·」改成了「-」<br>后来QQ因为实名上网的原因（）急需一个网名 于是就把「真-大沙子」简写成了「沙子」<br>顺便一提 英文名truebigsand也是由「真-大沙子」直译而来</p><h2 id="关于「我」"><a href="#关于「我」" class="headerlink" title="关于「我」"></a>关于「我」</h2><p>目前就读于<a href="http://www.jzhx.net/">南京市金陵中学河西分校</a><a href="http://www.jzhx.net/czb/">初中部</a><br>准初三学生 <del>15岁，事学生</del></p><h3 id="「我」的爱好"><a href="#「我」的爱好" class="headerlink" title="「我」的爱好"></a>「我」的爱好</h3><ul><li>★★☆☆编程☆☆★★（C++出身，常用C#、Python、C&#x2F;C++、HTML&#x2F;CSS&#x2F;JS 常用程度降序排列）</li><li>二次元（包括但不限于动画、漫画、小说、音乐以及泛二次元文化 <del>还有黄游</del>）</li><li>游戏（包括但不限于CS:GO、GTA5、Minecraft、原神（现在不玩了）、galgame <del>还有黄游</del>）</li><li>数学</li><li>DIY</li><li><del>领导学生阶级革命</del></li></ul><h4 id="具体来说"><a href="#具体来说" class="headerlink" title="具体来说"></a>具体来说</h4><h5 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h5><p>大概小学中年级开始接触Scratch 感觉编程很有意思 可以想干什么就干什么 <del>有一种“我就是神”的感觉</del><br>然后了解到OI这条路 通过GoC过渡到C++的学习<br>不过我把它当成兴趣 所以没有特别钻研OI</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 这段只是为了测试代码高亮是否正常工作</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cout&lt;&lt;<span class="hljs-string">&quot;Hello world!&quot;</span>&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>写出第一个程序的时候感觉很神奇 到现在也已经写了不少程序了<br>感觉和学习一样 <del>本来就是</del><br>「老师」教的和真正有趣的地方完全不一样<br>说到底还是应试教育的锅<br>刚开始学编程其实就是为了好玩<br>但是到现在好像也没写多少好玩的东西<br>如果你和我一样 欢迎到<a href="https://github.com/truebigsand">我的Github主页</a>来看看 <del>欢迎大佬PR</del></p><h5 id="二次元"><a href="#二次元" class="headerlink" title="二次元"></a>二次元</h5><p>「此生无悔入二次，来世愿做纸片人」<br>不过多解释，相关内容会在博客文章中体现</p><h5 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h5><p>不过多解释，相关内容会在博客文章中体现</p><h5 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h5><p>具体是在进入初中后受到某位同学的熏陶打开了新世界的大门<br>理解了此前也是饱受应试教育折磨<br>感觉最有用的就是导数 可以《方便》求极值 <del>或者随时随地大喊开导！！</del></p><h5 id="领导学生阶级革命"><a href="#领导学生阶级革命" class="headerlink" title="领导学生阶级革命"></a><del>领导学生阶级革命</del></h5><p>具体请参考「寄青年」相关文章</p><p>先这么多 想到再加</p>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/blog/"/>
     <url>/blog/</url>
     
-    <content type="html"><![CDATA[<h2 id="关于“真-大沙子”"><a href="#关于“真-大沙子”" class="headerlink" title="关于“真-大沙子”"></a>关于“真-大沙子”</h2><p>这个名字的来历要追溯到我刚「参与」互联网<br>也就是刚注册B站的时候<br>那是2018年的暑假<br>我不愿意自己在家 就被托付到一个同学家<br><del>记得那时候我还沉迷于抖音快手这种</del><br>受到那位同学的影响 我注册了B站账号 <del>并逐渐成为一个二刺螈</del><br>（不得不说 那时候B站的入站测试已经很简单了 做错的题还标出来让你回去重做）<br>注册总得有个名字 我不知为何突然就想起来之前那个同学给我看的一个MC视频<br>里面有个图 说什么大哲学家“真·大沙子”（<br>我就想拿这个做名字吧 有时间再想个 <del>后来成为我的网名并沿用至今</del><br>但是不知道是重名还是什么 导致把「·」改成了「-」<br>后来QQ因为实名上网的原因（）急需一个网名 于是就把「真-大沙子」简写成了「沙子」<br>顺便一提 英文名truebigsand也是由「真-大沙子」直译而来</p><h2 id="关于「我」"><a href="#关于「我」" class="headerlink" title="关于「我」"></a>关于「我」</h2><p>目前就读于<a href="http://www.jzhx.net/">南京市金陵中学河西分校</a><a href="http://www.jzhx.net/czb/">初中部</a><br>准初三学生 <del>15岁，事学生</del></p><h3 id="「我」的爱好"><a href="#「我」的爱好" class="headerlink" title="「我」的爱好"></a>「我」的爱好</h3><ul><li>★★☆☆编程☆☆★★（C++出身，常用C#、Python、C&#x2F;C++、HTML&#x2F;CSS&#x2F;JS 常用程度降序排列）</li><li>二次元（包括但不限于动画、漫画、小说、音乐以及泛二次元文化 <del>还有黄游</del>）</li><li>游戏（包括但不限于CS:GO、GTA5、Minecraft、原神（现在不玩了）、galgame <del>还有黄游</del>）</li><li>数学</li><li>DIY</li><li><del>领导学生阶级革命</del></li></ul><h4 id="具体来说"><a href="#具体来说" class="headerlink" title="具体来说"></a>具体来说</h4><h5 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h5><p>大概小学中年级开始接触Scratch 感觉编程很有意思 可以想干什么就干什么 <del>有一种“我就是神”的感觉</del><br>然后了解到OI这条路 通过GoC过渡到C++的学习<br>不过我把它当成兴趣 所以没有特别钻研OI</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 这段只是为了测试代码高亮是否正常工作</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cout&lt;&lt;<span class="hljs-string">&quot;Hello world!&quot;</span>&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>写出第一个程序的时候感觉很神奇 到现在也已经写了不少程序了<br>感觉和学习一样 <del>本来就是</del><br>「老师」教的和真正有趣的地方完全不一样<br>说到底还是应试教育的锅<br>刚开始学编程其实就是为了好玩<br>但是到现在好像也没写多少好玩的东西<br>如果你和我一样 欢迎到<a href="https://github.com/truebigsand">我的Github主页</a>来看看 <del>欢迎大佬PR</del></p><h5 id="二次元"><a href="#二次元" class="headerlink" title="二次元"></a>二次元</h5><p>「此生无悔入二次，来世愿做纸片人」<br>不过多解释，相关内容会在博客文章中体现</p><h5 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h5><p>不过多解释，相关内容会在博客文章中体现</p><h5 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h5><p>具体是在进入初中后受到某位同学的熏陶打开了新世界的大门<br>理解了此前也是饱受应试教育折磨<br>感觉最有用的就是导数 可以《方便》求极值 <del>或者随时随地大喊开导！！</del></p><h5 id="领导学生阶级革命"><a href="#领导学生阶级革命" class="headerlink" title="领导学生阶级革命"></a><del>领导学生阶级革命</del></h5><p>具体请参考「寄青年」相关文章</p><p>先这么多 想到再加</p>]]></content>
+    <content type="html"><![CDATA[!(function() {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/08/19 15:57:48");      function update() {      var now = new Date();      now.setTime(now.getTime()+250);      days = (now - start) / 1000 / 60 / 60 / 24;      dnum = Math.floor(days);      hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);      hnum = Math.floor(hours);      if(String(hnum).length === 1 ){        hnum = "0" + hnum;      }      minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);      mnum = Math.floor(minutes);      if(String(mnum).length === 1 ){        mnum = "0" + mnum;      }      seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);      snum = Math.round(seconds);      if(String(snum).length === 1 ){        snum = "0" + snum;      }      document.getElementById("timeDate").innerHTML = "本站已运行&nbsp"+dnum+"&nbsp天";      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }      update();    setInterval(update, 1000);  })();]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>音乐</title>
+    <link href="/blog/"/>
+    <url>/blog/</url>
+    
+    <content type="html"><![CDATA[<center>🚧🚧🚧建设中🚧🚧🚧</center>]]></content>
     
   </entry>
   
