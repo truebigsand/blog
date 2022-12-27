@@ -3,11 +3,11 @@
   <title>真-大沙子的博客</title>
   
   
-  <link href="https://truebigsand.github.io/blog/atom.xml" rel="self"/>
+  <link href="https://truebigsand.github.io/atom.xml" rel="self"/>
   
-  <link href="https://truebigsand.github.io/blog/"/>
+  <link href="https://truebigsand.github.io/"/>
   <updated>2022-09-04T12:49:23.284Z</updated>
-  <id>https://truebigsand.github.io/blog/</id>
+  <id>https://truebigsand.github.io/</id>
   
   <author>
     <name>真-大沙子</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>【解决方案】关闭Visual Studio后仍有PerfWatson2.exe占用文件夹</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E3%80%90%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%91%E5%85%B3%E9%97%ADVisual-Studio%E5%90%8E%E4%BB%8D%E6%9C%89PerfWatson2-exe%E5%8D%A0%E7%94%A8%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E3%80%90%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%91%E5%85%B3%E9%97%ADVisual-Studio%E5%90%8E%E4%BB%8D%E6%9C%89PerfWatson2-exe%E5%8D%A0%E7%94%A8%E6%96%87%E4%BB%B6%E5%A4%B9/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E3%80%90%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%91%E5%85%B3%E9%97%ADVisual-Studio%E5%90%8E%E4%BB%8D%E6%9C%89PerfWatson2-exe%E5%8D%A0%E7%94%A8%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E3%80%90%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%91%E5%85%B3%E9%97%ADVisual-Studio%E5%90%8E%E4%BB%8D%E6%9C%89PerfWatson2-exe%E5%8D%A0%E7%94%A8%E6%96%87%E4%BB%B6%E5%A4%B9/</id>
     <published>2022-08-20T07:29:31.000Z</published>
     <updated>2022-09-04T12:49:23.284Z</updated>
     
@@ -33,19 +33,19 @@
     
     
     
-    <category term="技术" scheme="https://truebigsand.github.io/blog/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://truebigsand.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="技术" scheme="https://truebigsand.github.io/blog/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://truebigsand.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Visual Studio" scheme="https://truebigsand.github.io/blog/tags/Visual-Studio/"/>
+    <category term="Visual Studio" scheme="https://truebigsand.github.io/tags/Visual-Studio/"/>
     
   </entry>
   
   <entry>
     <title>关于「寄青年」</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E5%85%B3%E4%BA%8E%E3%80%8C%E5%AF%84%E9%9D%92%E5%B9%B4%E3%80%8D/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E5%85%B3%E4%BA%8E%E3%80%8C%E5%AF%84%E9%9D%92%E5%B9%B4%E3%80%8D/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E5%85%B3%E4%BA%8E%E3%80%8C%E5%AF%84%E9%9D%92%E5%B9%B4%E3%80%8D/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E5%85%B3%E4%BA%8E%E3%80%8C%E5%AF%84%E9%9D%92%E5%B9%B4%E3%80%8D/</id>
     <published>2022-08-20T05:35:23.000Z</published>
     <updated>2022-08-20T06:02:45.163Z</updated>
     
@@ -59,19 +59,19 @@
     
     
     
-    <category term="日常" scheme="https://truebigsand.github.io/blog/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://truebigsand.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="大事件" scheme="https://truebigsand.github.io/blog/tags/%E5%A4%A7%E4%BA%8B%E4%BB%B6/"/>
+    <category term="大事件" scheme="https://truebigsand.github.io/tags/%E5%A4%A7%E4%BA%8B%E4%BB%B6/"/>
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>日寄</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%97%A5%E5%AF%84/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%97%A5%E5%AF%84/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%97%A5%E5%AF%84/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%97%A5%E5%AF%84/</id>
     <published>2022-08-20T05:29:59.692Z</published>
     <updated>2022-08-20T05:33:53.639Z</updated>
     
@@ -85,17 +85,17 @@
     
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>死地</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%AD%BB%E5%9C%B0/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%AD%BB%E5%9C%B0/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%AD%BB%E5%9C%B0/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%AD%BB%E5%9C%B0/</id>
     <published>2022-08-20T05:17:32.030Z</published>
     <updated>2022-08-20T05:28:47.675Z</updated>
     
@@ -109,17 +109,17 @@
     
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>正林先生</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%AD%A3%E6%9E%97%E5%85%88%E7%94%9F/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%AD%A3%E6%9E%97%E5%85%88%E7%94%9F/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%AD%A3%E6%9E%97%E5%85%88%E7%94%9F/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E6%AD%A3%E6%9E%97%E5%85%88%E7%94%9F/</id>
     <published>2022-08-20T05:14:45.335Z</published>
     <updated>2022-08-20T05:17:07.776Z</updated>
     
@@ -133,17 +133,17 @@
     
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>短文两篇</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E7%9F%AD%E6%96%87%E4%B8%A4%E7%AF%87/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E7%9F%AD%E6%96%87%E4%B8%A4%E7%AF%87/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E7%9F%AD%E6%96%87%E4%B8%A4%E7%AF%87/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E7%9F%AD%E6%96%87%E4%B8%A4%E7%AF%87/</id>
     <published>2022-08-20T05:11:38.480Z</published>
     <updated>2022-08-20T05:14:23.687Z</updated>
     
@@ -157,17 +157,17 @@
     
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>鸟人日记</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E9%B8%9F%E4%BA%BA%E6%97%A5%E8%AE%B0/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E9%B8%9F%E4%BA%BA%E6%97%A5%E8%AE%B0/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E9%B8%9F%E4%BA%BA%E6%97%A5%E8%AE%B0/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E9%B8%9F%E4%BA%BA%E6%97%A5%E8%AE%B0/</id>
     <published>2022-08-20T05:09:16.099Z</published>
     <updated>2022-08-20T05:10:41.511Z</updated>
     
@@ -181,17 +181,17 @@
     
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>学个寄</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E5%AD%A6%E4%B8%AA%E5%AF%84/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E5%AD%A6%E4%B8%AA%E5%AF%84/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E5%AD%A6%E4%B8%AA%E5%AF%84/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E5%AD%A6%E4%B8%AA%E5%AF%84/</id>
     <published>2022-08-20T05:07:31.719Z</published>
     <updated>2022-08-20T05:08:55.182Z</updated>
     
@@ -205,17 +205,17 @@
     
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>寄告青年</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E5%AF%84%E5%91%8A%E9%9D%92%E5%B9%B4/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E5%AF%84%E5%91%8A%E9%9D%92%E5%B9%B4/</id>
+    <link href="https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E5%AF%84%E5%91%8A%E9%9D%92%E5%B9%B4/"/>
+    <id>https://truebigsand.github.io/2022/08/20/%E5%AF%84%E9%9D%92%E5%B9%B4/%E5%AF%84%E5%91%8A%E9%9D%92%E5%B9%B4/</id>
     <published>2022-08-20T04:43:55.361Z</published>
     <updated>2022-08-20T05:06:44.898Z</updated>
     
@@ -229,17 +229,17 @@
     
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/categories/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
     
-    <category term="寄青年" scheme="https://truebigsand.github.io/blog/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
+    <category term="寄青年" scheme="https://truebigsand.github.io/tags/%E5%AF%84%E9%9D%92%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>Gitee 你妈死了</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/19/gitee-nmsl/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/19/gitee-nmsl/</id>
+    <link href="https://truebigsand.github.io/2022/08/19/gitee-nmsl/"/>
+    <id>https://truebigsand.github.io/2022/08/19/gitee-nmsl/</id>
     <published>2022-08-19T13:20:55.421Z</published>
     <updated>2022-08-20T04:57:15.756Z</updated>
     
@@ -253,21 +253,21 @@
     
     
     
-    <category term="日常" scheme="https://truebigsand.github.io/blog/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://truebigsand.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="技术" scheme="https://truebigsand.github.io/blog/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://truebigsand.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Gitee" scheme="https://truebigsand.github.io/blog/tags/Gitee/"/>
+    <category term="Gitee" scheme="https://truebigsand.github.io/tags/Gitee/"/>
     
-    <category term="网站" scheme="https://truebigsand.github.io/blog/tags/%E7%BD%91%E7%AB%99/"/>
+    <category term="网站" scheme="https://truebigsand.github.io/tags/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
   <entry>
     <title>Hello world!</title>
-    <link href="https://truebigsand.github.io/blog/2022/08/19/hello-world/"/>
-    <id>https://truebigsand.github.io/blog/2022/08/19/hello-world/</id>
+    <link href="https://truebigsand.github.io/2022/08/19/hello-world/"/>
+    <id>https://truebigsand.github.io/2022/08/19/hello-world/</id>
     <published>2022-08-19T07:58:02.063Z</published>
     <updated>2022-08-20T04:57:27.818Z</updated>
     
@@ -281,12 +281,12 @@
     
     
     
-    <category term="日常" scheme="https://truebigsand.github.io/blog/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://truebigsand.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="网站" scheme="https://truebigsand.github.io/blog/tags/%E7%BD%91%E7%AB%99/"/>
+    <category term="网站" scheme="https://truebigsand.github.io/tags/%E7%BD%91%E7%AB%99/"/>
     
-    <category term="大事件" scheme="https://truebigsand.github.io/blog/tags/%E5%A4%A7%E4%BA%8B%E4%BB%B6/"/>
+    <category term="大事件" scheme="https://truebigsand.github.io/tags/%E5%A4%A7%E4%BA%8B%E4%BB%B6/"/>
     
   </entry>
   
