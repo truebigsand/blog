@@ -35,7 +35,7 @@
     <link href="/2022/12/27/%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D%E8%BF%81%E7%A7%BB/"/>
     <url>/2022/12/27/%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D%E8%BF%81%E7%A7%BB/</url>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>今天想到<a href="https://vercel.com/">vercel</a>对<a href="https://nextjs.org/">Next.js</a>的宣传，心血来潮想要把博客迁到vercel上，顺便测试一下<a href="https://pages.github.com/">github pages</a>和<a href="https://vercel.com/">vercel</a>的速度 感谢<a href="http://www.17ce.com/">17ce</a>提供的测速服务</p><h1 id="测速结果"><a href="#测速结果" class="headerlink" title="测速结果"></a>测速结果</h1><h2 id="使用Cloudflare-CDN"><a href="#使用Cloudflare-CDN" class="headerlink" title="使用Cloudflare CDN"></a>使用Cloudflare CDN</h2><h3 id="vercel"><a href="#vercel" class="headerlink" title="vercel"></a>vercel</h3><p><img src="/imgs/vercel-cloudflare.png" alt="http://www.17ce.com/site/http/20221227_5fb56cc085df11ed8cb737dbeefbfc25:1.html"></p><h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><img src="/imgs/github-cloudflare.png" alt="http://www.17ce.com/site/http/20221227_6b5e807085df11ed8cb737dbeefbfc25:1.html"></p><h2 id="不使用Cloudflare-CDN"><a href="#不使用Cloudflare-CDN" class="headerlink" title="不使用Cloudflare CDN"></a>不使用Cloudflare CDN</h2><h3 id="vercel-1"><a href="#vercel-1" class="headerlink" title="vercel"></a>vercel</h3><p><img src="/imgs/vercel-non-cloudflare.png" alt="http://www.17ce.com/site/http/20221227_32c09b6085e211eda16def0f096a0469:1.html"></p><h3 id="github-1"><a href="#github-1" class="headerlink" title="github"></a>github</h3><p><img src="/imgs/github-non-cloudflare.png" alt="http://www.17ce.com/site/http/20221227_dbbca5b085e211ed8cb737dbeefbfc25:1.html"></p><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>从结果可以看出，Cloudflare CDN起到了一定效果(尤其是境外地区)，但对于大陆地区没有显著效果<br>(不知道为什么vercel-cloudflare的结果有很多地方测不到)<br>最后还是决定把<a href="https://blog.truebigsand.top/">https://blog.truebigsand.top</a>给vercel-cloudflare</p><h1 id="说说域名"><a href="#说说域名" class="headerlink" title="说说域名"></a>说说域名</h1><p><strong>truebigsand.top</strong><br>在阿里云买的 top域名是综合最便宜的 9元首年 之后29一年<br>还算承担得起 准备一直续着<br>目前部署了一些api</p><h1 id="已知的问题"><a href="#已知的问题" class="headerlink" title="已知的问题"></a>已知的问题</h1><p>Github Pages似乎每次更新都会充值自定义域名</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>今天想到<a href="https://vercel.com/">vercel</a>对<a href="https://nextjs.org/">Next.js</a>的宣传，心血来潮想要把博客迁到vercel上，顺便测试一下<a href="https://pages.github.com/">github pages</a>和<a href="https://vercel.com/">vercel</a>的速度 感谢<a href="http://www.17ce.com/">17ce</a>提供的测速服务</p><h1 id="测速结果"><a href="#测速结果" class="headerlink" title="测速结果"></a>测速结果</h1><h2 id="使用Cloudflare-CDN"><a href="#使用Cloudflare-CDN" class="headerlink" title="使用Cloudflare CDN"></a>使用Cloudflare CDN</h2><h3 id="vercel"><a href="#vercel" class="headerlink" title="vercel"></a>vercel</h3><p><img src="/imgs/vercel-cloudflare.png" alt="http://www.17ce.com/site/http/20221227_5fb56cc085df11ed8cb737dbeefbfc25:1.html"></p><h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><img src="/imgs/github-cloudflare.png" alt="http://www.17ce.com/site/http/20221227_6b5e807085df11ed8cb737dbeefbfc25:1.html"></p><h2 id="不使用Cloudflare-CDN"><a href="#不使用Cloudflare-CDN" class="headerlink" title="不使用Cloudflare CDN"></a>不使用Cloudflare CDN</h2><h3 id="vercel-1"><a href="#vercel-1" class="headerlink" title="vercel"></a>vercel</h3><p><img src="/imgs/vercel-non-cloudflare.png" alt="http://www.17ce.com/site/http/20221227_32c09b6085e211eda16def0f096a0469:1.html"></p><h3 id="github-1"><a href="#github-1" class="headerlink" title="github"></a>github</h3><p><img src="/imgs/github-non-cloudflare.png" alt="http://www.17ce.com/site/http/20221227_dbbca5b085e211ed8cb737dbeefbfc25:1.html"></p><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>从结果可以看出，Cloudflare CDN起到了一定效果(尤其是境外地区)，但对于大陆地区没有显著效果<br>(不知道为什么vercel-cloudflare的结果有很多地方测不到)<br>最后还是决定把<a href="https://blog.truebigsand.top/">https://blog.truebigsand.top</a>给vercel-cloudflare</p><h1 id="说说域名"><a href="#说说域名" class="headerlink" title="说说域名"></a>说说域名</h1><p><strong>truebigsand.top</strong><br>在阿里云买的 top域名是综合最便宜的 9元首年 之后29一年<br>还算承担得起 准备一直续着<br>目前部署了一些api</p><h1 id="已知的问题"><a href="#已知的问题" class="headerlink" title="已知的问题"></a>已知的问题</h1><p>Github Pages似乎每次更新都会充值自定义域名</p><h1 id="「更新」-使用阿里云拨测"><a href="#「更新」-使用阿里云拨测" class="headerlink" title="「更新」: 使用阿里云拨测"></a>「更新」: 使用<a href="https://boce.aliyun.com/detect/http">阿里云拨测</a></h1><p>才发现阿里云还有这样的服务 挺好用的 (截图不整了)</p><h2 id="使用Cloudflare-CDN-1"><a href="#使用Cloudflare-CDN-1" class="headerlink" title="使用Cloudflare CDN"></a>使用Cloudflare CDN</h2><h3 id="vercel-2"><a href="#vercel-2" class="headerlink" title="vercel"></a>vercel</h3><p><a href="https://boce.aliyun.com/detect/http/0d0a16f20c0a4cf9b746fca110fbf573">https://boce.aliyun.com/detect/http/0d0a16f20c0a4cf9b746fca110fbf573</a></p><h3 id="github-2"><a href="#github-2" class="headerlink" title="github"></a>github</h3><p><a href="https://boce.aliyun.com/detect/http/f7cdca54674149e1bb1beaee3eec50ce">https://boce.aliyun.com/detect/http/f7cdca54674149e1bb1beaee3eec50ce</a></p><h2 id="不使用Cloudflare-CDN-1"><a href="#不使用Cloudflare-CDN-1" class="headerlink" title="不使用Cloudflare CDN"></a>不使用Cloudflare CDN</h2><h3 id="vercel-3"><a href="#vercel-3" class="headerlink" title="vercel"></a>vercel</h3><p><a href="https://boce.aliyun.com/detect/http/8ca769ad5bb34c85bd75a35adf02d78f">https://boce.aliyun.com/detect/http/8ca769ad5bb34c85bd75a35adf02d78f</a></p><h3 id="github-3"><a href="#github-3" class="headerlink" title="github"></a>github</h3><p><a href="https://boce.aliyun.com/detect/http/c2d4b3bf9ae14ebe912b7b9f708360c8">https://boce.aliyun.com/detect/http/c2d4b3bf9ae14ebe912b7b9f708360c8</a></p>]]></content>
     
     
     <categories>
@@ -47,11 +47,11 @@
     
     <tags>
       
-      <tag>网站</tag>
-      
       <tag>技术</tag>
       
       <tag>大事件</tag>
+      
+      <tag>网站</tag>
       
     </tags>
     
@@ -305,11 +305,11 @@
     
     <tags>
       
+      <tag>技术</tag>
+      
       <tag>Gitee</tag>
       
       <tag>网站</tag>
-      
-      <tag>技术</tag>
       
     </tags>
     
@@ -334,9 +334,9 @@
     
     <tags>
       
-      <tag>网站</tag>
-      
       <tag>大事件</tag>
+      
+      <tag>网站</tag>
       
     </tags>
     
@@ -374,7 +374,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><!--<center>🚧🚧🚧建设中🚧🚧🚧</center>--><h2 id="真-大沙子喜欢的音乐"><a href="#真-大沙子喜欢的音乐" class="headerlink" title="真-大沙子喜欢的音乐"></a><a href="https://music.163.com/playlist?id=3119319371">真-大沙子喜欢的音乐</a></h2><!--    <div id="aplayer-UutZEqJz" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3119319371" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"    ></div>-->    <div id="aplayer-chOCeElD" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7623146451" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="114514px" data-preload="auto" data-theme="#ad7a86"    ></div>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><!--<center>🚧🚧🚧建设中🚧🚧🚧</center>--><h2 id="真-大沙子喜欢的音乐"><a href="#真-大沙子喜欢的音乐" class="headerlink" title="真-大沙子喜欢的音乐"></a><a href="https://music.163.com/playlist?id=3119319371">真-大沙子喜欢的音乐</a></h2><!--    <div id="aplayer-yCxhiWvZ" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3119319371" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"    ></div>-->    <div id="aplayer-vSmktrLg" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7623146451" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="114514px" data-preload="auto" data-theme="#ad7a86"    ></div>]]></content>
     
   </entry>
   
