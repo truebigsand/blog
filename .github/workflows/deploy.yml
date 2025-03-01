@@ -47,6 +47,7 @@ jobs:
       - name: Deploy to GitHub Pages
         run: |
           sed -i 's#https://github.com#https://${{ secrets.GIT_USER_NAME }}:${{ secrets.GH_TOKEN }}@github.com#' _config.yml
+          git clone https://github.com/truebigsand/truebigsand.github.io.git .deploy_git
           hexo deploy
         env:
           TOKEN: ${{ secrets.GH_TOKEN }}
