@@ -63,7 +63,7 @@ ignore: null
 theme: butterfly
 deploy:
 - type: git
-  repo: https://github.com/truebigsand/truebigsand.github.io
+  repo: https://truebigsand@github.com/truebigsand/truebigsand.github.io
   branch: master
 # - type: git
 #   repo: https://gitee.com/truebigsand/blog
