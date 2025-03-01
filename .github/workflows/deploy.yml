@@ -49,5 +49,5 @@ jobs:
           git add -A
           git commit -m "Site update by workflows"
           git branch -M master
-          git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/truebigsand/truebigsand.github.io.git
+          git remote add origin https://truebigsand:${{ secrets.GITHUB_TOKEN }}@github.com/truebigsand/truebigsand.github.io.git
           git push origin HEAD:main -f
