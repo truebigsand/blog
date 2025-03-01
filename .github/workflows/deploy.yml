@@ -25,7 +25,7 @@ jobs:
 
       - name: Install Hexo Git Deployer
         run: |
-          npm install hexo-deployer-git --save
+          # npm install hexo-deployer-git --save
           npm install hexo-cli -g
       
       - name: Update Bilibili Bangumis
@@ -36,6 +36,7 @@ jobs:
         run: |
           git config --global user.name '${{ secrets.GIT_USER_NAME }}'
           git config --global user.email '${{ secrets.GIT_USER_EMAIL }}'
+          git config --global user.password '${{ secrets.GITHUB_TOKEN }}'
           git config --global core.autocrlf false
 
       - name: Clean and Generate Static Files
