@@ -1,0 +1,1 @@
+hexo.extend.injector.register('head_begin', '<script defer src="https://umami.truebigsand.top/asdfghjkl" data-website-id="52e85673-ab5d-4548-bad7-779a4dd96e69"></script>')
