@@ -49,4 +49,4 @@ jobs:
           sed -i 's#https://github.com#https://${{ secrets.GIT_USER_NAME }}:${{ secrets.GH_TOKEN }}@github.com#' _config.yml
           hexo deploy
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.GH_TOKEN }}
