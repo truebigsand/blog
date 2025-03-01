@@ -63,8 +63,7 @@ ignore: null
 theme: butterfly
 deploy:
 - type: git
-  repo: git@github.com:truebigsand/truebigsand.github.io.git
-  token: $TOKEN
+  repo: https://github.com/truebigsand/truebigsand.github.io.git
 # - type: git
 #   repo: https://gitee.com/truebigsand/blog
 aplayer:
