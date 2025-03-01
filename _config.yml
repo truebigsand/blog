@@ -91,9 +91,9 @@ bangumi: # 追番设置
   progress:
   extraOrder:
   order: latest
-  proxy:
-    host: '127.0.0.1'
-    port: '7890'
+  # proxy:
+  #   host: '127.0.0.1'
+  #   port: '7890'
   extra_options:
     key: value
 cinema: # 追剧设置
