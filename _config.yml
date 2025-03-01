@@ -63,9 +63,10 @@ ignore: null
 theme: butterfly
 deploy:
 - type: git
-  repo: https://github.com/truebigsand/blog
-- type: git
-  repo: https://gitee.com/truebigsand/blog
+  repo: https://github.com/truebigsand/truebigsand.github.io
+  branch: master
+# - type: git
+#   repo: https://gitee.com/truebigsand/blog
 aplayer:
   asset_inject: false
   meting: true
