@@ -32,22 +32,21 @@ jobs:
         run: |
           hexo bangumi -u
 
+      - name: Configure Git
+        run: |
+          git config --global user.name '${{ secrets.GIT_USER_NAME }}'
+          git config --global user.email '${{ secrets.GIT_USER_EMAIL }}'
+          # git config --global user.password '${{ secrets.GITHUB_TOKEN }}'
+          git config --global core.autocrlf false
+
       - name: Clean and Generate Static Files
         run: |
           hexo clean
           hexo generate
 
-      - name: Configure Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
       - name: Deploy to GitHub Pages
         run: |
-          cd public/
-          git init
-          git add -A
-          git commit -m "Site update by workflows"
-          git branch -M master
-          git remote add origin https://truebigsand:${{ secrets.GITHUB_TOKEN }}@github.com/truebigsand/truebigsand.github.io.git
-          git push origin HEAD:main -f
+          sed -i 's#https://github.com#https://${{ secrets.GIT_USER_NAME }}:${{ secrets.GITHUB_TOKEN }}@github.com#' _config.yml
+          hexo deploy
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
