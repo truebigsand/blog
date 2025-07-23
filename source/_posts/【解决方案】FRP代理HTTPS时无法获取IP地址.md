@@ -17,13 +17,13 @@ tags:
 
 ``` toml
 # frpc.toml
-    [[proxies]]
-    name = "web-https"
-    type = "https"
-    localIP = "127.0.0.1"
-    localPort = 443
-    customDomains = ...
-    transport.proxyProtocolVersion = "v2" # 增加
+[[proxies]]
+name = "web-https"
+type = "https"
+localIP = "127.0.0.1"
+localPort = 443
+customDomains = ...
+transport.proxyProtocolVersion = "v2" # 增加
 ```
 
 ``` conf
