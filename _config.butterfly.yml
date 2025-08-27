@@ -821,7 +821,7 @@ microsoft_clarity: n4oq003ka0
 umami_analytics:
   enable: true
   # 給自託管的 Umami 實例配置主機名
-  serverURL: https://umami.truebigsand.top/asdfghjkl
+  serverURL: https://umami.truebigsand.top
   website_id: 52e85673-ab5d-4548-bad7-779a4dd96e69
   option:
   UV_PV:
