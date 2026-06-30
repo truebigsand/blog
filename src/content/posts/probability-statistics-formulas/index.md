@@ -1,0 +1,58 @@
+---
+title: 一些概率统计的公式推导
+published: 2025-09-13
+category: 数学
+tags:
+  - 数学
+  - 推导
+  - 概率统计
+---
+
+其实是在高二刚学的时候推的 拖到现在才搞成电子稿（
+## 二项分布
+设有二项分布
+$$
+X\sim \mathrm{B}(n,p)
+$$
+则有期望
+$$
+\begin{aligned}
+    \mu&=\sum_{k=0}^{n}{\mathrm{P}(X=k)k}\\
+    &=\sum_{k=0}^{n}{\mathrm{C}_n^k p^k (1-p)^{n-k} k}\\
+    &=\sum_{k=1}^{n}{\mathrm{C}_{n-1}^{k-1} p^{k-1} (1-p)^{(n-1)-(k-1)} np}\\
+    &=[p+(1-p)]^{n-1} np\\
+    &=np
+\end{aligned}
+$$
+方差
+$$
+\begin{aligned}
+    \sigma^2&=\sum_{k=0}^{n}{\mathrm{P}(X=k)(k-\mu)^2}\\
+    &=\sum_{k=0}^{n}{\mathrm{P}(X=k)k^2} - 2\mu\sum_{k=0}^{n}{\mathrm{P}(X=k)k} + \mu^2\\
+    &=\sum_{k=0}^{n}{\mathrm{P}(X=k)k^2} - 2\mu^2 + \mu^2\\
+    &=\sum_{k=0}^{n}{\mathrm{C}_n^k} p^k (1-p)^{n-k} k^2 - \mu^2\\
+    &=np\sum_{k=1}^{n}{\mathrm{C}_{n-1}^{k-1} p^{k-1} (1-p)^{(n-1)-(k-1)}k} - \mu^2\\
+    &=np\sum_{k=1}^{n}{\mathrm{C}_{n-1}^{k-1} p^{k-1} (1-p)^{(n-1)-(k-1)}[(k-1)+1]} - \mu^2\\
+    &=np\sum_{k=2}^{n}{\mathrm{C}_{n-1}^{k-1} p^{k-1} (1-p)^{(n-1)-(k-1)}(k-1)} + \sum_{k=1}^{n}{\mathrm{C}_{n-1}^{k-1}} p^{k-1} (1-p)^{(n-1)-(k-1)} - \mu^2\\
+    &=n(n-1)p^2\sum_{k=2}^{n}{\mathrm{C}_{n-2}^{k-2} p^{k-2} (1-p)^{(n-2)-(k-2)}} + \sum_{k=1}^{n}{\mathrm{C}_{n-1}^{k-1} p^{k-1} (1-p)^{(n-1)-(k-1)}} - \mu^2\\
+    &=n(n-1)p^2 [p+(1-p)]^{n-2} + [p+(1-p)]^{n-1} - \mu^2\\
+    &=n(n-1)p^2 + 1 - n^2 p^2\\
+    &=np(1-p)
+\end{aligned}
+$$
+
+## 分层抽样
+样本数量 $n$，均值 $\mu$，方差 $\sigma^2$
+共 $k$ 层，第 $i$ 层样本数量为 $n_i$，均值为 $\mu_i$，方差为 $\sigma_i^2$
+第 $i$ 层第 $j$ 个样本为 $x_{ij}$
+则有方差
+$$
+\begin{aligned}
+    \sigma^2&=\frac{1}{n}\sum_{i=1}^{k}{\sum_{j=1}^{n_i}{(x_{ij}-\mu)^2}}\\
+    &=\frac{1}{n}\sum_{i=1}^{k}{\sum_{j=1}^{n_i}{[(x_{ij}-\mu_i)+(\mu_i-\mu)]^2}}\\
+    &=\frac{1}{n}\sum_{i=1}^{k}{\left[\sum_{j=1}^{n_i}{(x_{ij}-\mu_i)^2} + 2(\mu_i-\mu)\sum_{j=1}^{n_i}{(x_{ij}-\mu_i)} + \sum_{j=1}^{n_i}{(\mu_i-\mu)^2}\right]}\\
+    &=\frac{1}{n}\sum_{i=1}^{k}{\left[n_i\sigma_i^2 + 2(\mu_i-\mu)\left(\sum_{j=1}^{n_i}{x_{ij}-n_i\mu_i}\right) + n_i(\mu_i-\mu)^2\right]}\\
+    &=\frac{1}{n}\sum_{i=1}^{k}{\left[n_i\sigma_i^2 + n_i(\mu_i-\mu)^2\right]}\\
+    &=\frac{1}{n}\sum_{i=1}^{k}{n_i\left[\sigma_i^2 + (\mu_i-\mu)^2\right]}
+\end{aligned}
+$$
