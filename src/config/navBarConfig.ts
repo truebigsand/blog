@@ -97,6 +97,13 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		icon: "material-symbols:book",
 	});
 
+	links.push({
+		name: "🚇开往",
+		url: "https://www.travellings.cn/go.html",
+		external: true,
+		icon: "fa6-solid:train-subway"
+	})
+
 	return { links } as NavBarConfig;
 };
 
