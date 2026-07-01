@@ -101,7 +101,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		name: "🚇开往",
 		url: "https://www.travellings.cn/go.html",
 		external: true,
-		icon: "fa6-solid:train-subway"
+		icon: "fa7-solid:train-subway"
 	})
 
 	return { links } as NavBarConfig;
