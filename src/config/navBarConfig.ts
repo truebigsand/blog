@@ -87,14 +87,13 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 				external: true,
 				icon: "fa7-brands:bilibili",
 			},
+			{
+				name: "南师附中开发者社2023级社团教材",
+				url: "/posts/developer-club-textbook-2023/",
+				external: false,
+				icon: "material-symbols:book",
+			}
 		],
-	});
-
-	links.push({
-		name: "南师附中开发者社2023级社团教材",
-		url: "/posts/developer-club-textbook-2023/",
-		external: false,
-		icon: "material-symbols:book",
 	});
 
 	links.push({
