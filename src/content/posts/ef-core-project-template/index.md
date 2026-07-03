@@ -1,6 +1,6 @@
 ---
 title: 建立EntityFrameworkCore项目的模板
-published: 2026-06-30
+published: 2026-05-16
 category: 技术
 tags:
   - .NET

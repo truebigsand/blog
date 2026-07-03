@@ -1,6 +1,6 @@
 ---
 title: 从.NET Aspire看MySQL在云原生时代的退位
-published: 2026-06-30
+published: 2026-04-07
 category: 技术
 tags:
   - .NET

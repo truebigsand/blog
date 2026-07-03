@@ -1,6 +1,6 @@
 ---
 title: 失败的软路由记录
-published: 2026-06-30
+published: 2026-06-16
 category: 技术
 tags:
   - 网络
