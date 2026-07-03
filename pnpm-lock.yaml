@@ -210,6 +210,9 @@ importers:
       '@types/sanitize-html':
         specifier: ^2.16.1
         version: 2.16.1
+      pinyin-pro:
+        specifier: ^3.28.1
+        version: 3.28.1
       postcss-import:
         specifier: ^16.1.1
         version: 16.1.1(postcss@8.5.15)
@@ -4394,6 +4397,9 @@ packages:
   pify@5.0.0:
     resolution: {integrity: sha512-eW/gHNMlxdSP6dmG6uJip6FXN0EQBwm2clYYd8Wul42Cwu/DK8HEftzsapcNdYe2MfLiIwZqsDk2RDEsTE79hA==}
     engines: {node: '>=10'}
+
+  pinyin-pro@3.28.1:
+    resolution: {integrity: sha512-oqz8ulwRgtUXRi0vbqEfGNly19zpyCxYrjhkk5TibGcgSW6eNwS5woajCXRwqURi8Ehc2yOFTiB4uNoZ+NJOnA==}
 
   pkg-dir@4.2.0:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
@@ -10865,6 +10871,8 @@ snapshots:
   pify@2.3.0: {}
 
   pify@5.0.0: {}
+
+  pinyin-pro@3.28.1: {}
 
   pkg-dir@4.2.0:
     dependencies:
