@@ -97,7 +97,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	});
 
 	links.push({
-		name: "🚇开往",
+		name: "开往",
 		url: "https://www.travellings.cn/go.html",
 		external: true,
 		icon: "fa7-solid:train-subway"

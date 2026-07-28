@@ -262,15 +262,16 @@ function escapeYamlValue(val) {
 
 function createPrompt() {
   const rl = createInterface({ input: process.stdin, output: process.stdout })
-  return (question) => new Promise(resolve => {
+  const ask = (question) => new Promise(resolve => {
     rl.question(question, (answer) => {
       resolve(answer.trim())
     })
   })
+  return { ask, close: () => rl.close() }
 }
 
 async function interactiveMode() {
-  const ask = createPrompt()
+  const { ask, close } = createPrompt()
 
   console.log("\n📝 新建文章\n" + "─".repeat(40) + "\n")
 
@@ -321,6 +322,7 @@ async function interactiveMode() {
 
   console.log("\n" + "─".repeat(40) + "\n")
 
+  close()
   return { title, slug, flat, category, tags, image, draft, published: pubDate }
 }
 
