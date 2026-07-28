@@ -16,11 +16,12 @@
 ## 关于「我」
 
 ~~目前就读于~~[~~南京市金陵中学河西分校~~](http://www.jzhx.net/)[~~初中部~~](http://www.jzhx.net/czb/)
-~~准初三学生 ~~~~15岁，事学生~~
+~~准初三学生~~ ~~15岁，事学生~~
 
 芜湖 毕业辣
-目前就读于[南京师范大学附属中学](https://www.nsfz.net/press/default.aspx)
+~~目前就读于[南京师范大学附属中学](https://www.nsfz.net/press/default.aspx)~~
 ~~你怎么知道我上了NSFZ~~
+目前就读于[南京邮电大学](https://www.njupt.edu.cn/)计算机学院
 
 
 ### 「我」的爱好
