@@ -42,6 +42,7 @@ import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
 import { remarkPlantuml } from "./src/plugins/remark-plantuml.js";
 import remarkBreaks from "remark-breaks";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
+import { copyPostAssets } from "./src/plugins/vite-plugin-copy-post-assets.mjs";
 
 if (process.env.NODE_ENV === "development") {
 	setMaxListeners(20);
@@ -286,7 +287,7 @@ export default defineConfig({
 		}),
 	},
 	vite: {
-		plugins: [tailwindcss()],
+		plugins: [tailwindcss(), copyPostAssets()],
 		server: {
 			watch: {
 				ignored: ["**/package/**", "**/Firefly-docs/**"],

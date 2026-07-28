@@ -22,13 +22,13 @@ tags:
 
 > 中兴光猫telnet工具：[https://github.com/douniwan5788/zte\_modem\_tools](https://github.com/douniwan5788/zte_modem_tools)
 >
-> 备份：[zte\_modem\_tools-main.zip](/upload/zte_modem_tools-main.zip)
+> 备份：[zte\_modem\_tools-main.zip](./zte_modem_tools-main.zip)
 >
 > 使用方法：`python3 zte_factroymode.py --user CMCCAdmin --pass --ip 192.168.1.1 --port 80 telnet open`
 >
 > 解密工具：[https://pan.baidu.com/s/1kDfNa7nJ2madFadPlPgnjQ?pwd=y6my](https://pan.baidu.com/s/1kDfNa7nJ2madFadPlPgnjQ?pwd=y6my)
 >
-> 备份：[光猫破解工具.rar](/upload/%E5%85%89%E7%8C%AB%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7.rar)
+> 备份：[光猫破解工具.rar](./%E5%85%89%E7%8C%AB%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7.rar)
 >
 > 使用方法： `./ztecfg.exe db_user_cfg.xml`
 
@@ -248,3 +248,6 @@ flowchart LR
 - **DNS** 查询（虚线）：副路由 → dnsmasq :53 → clash DNS :1053 → 198.18.0.x (fake-IP)
 
 由于交换机的电口是2.5G的 后续升级只需要加一个2.5G网卡就行了 对于无线设备只更换副路由也很方便（只接了一根网线在WAN口）
+
+# 更新
+给NUC和我的电脑都加了个USB 2.5G网卡（30CNY/个） 成功跑满
