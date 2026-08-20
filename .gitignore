@@ -39,3 +39,5 @@ package/
 .obsidian/
 
 source/constants/lqips.json
+# ZCode tool directory
+.zcode/
