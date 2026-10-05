@@ -10,7 +10,7 @@ tags:
 ## 关于「寄青年」
 起因是语文课学到鲁迅的《藤野先生》
 我<del>闲着没事</del>改编了一篇关于我们语文老师的
-即[《正林先生》](/posts/jiqingnian/mr-zhenglin/)
+即[《正林先生》](/posts/jiqingnian/zheng-lin-xian-sheng/)
 后来历史课学到“新文化运动的时候”
 一方面平时离大谱的事很多
 另一方面受到书上英雄故事的鼓舞
@@ -33,5 +33,5 @@ tags:
 ### 迁移
 目前已全部迁至本博客
 ### PDF文件
-[jiqingnian.pdf](/file/jiqingnian.pdf)
+[jiqingnian.pdf](/files/jiqingnian.pdf)
 [蓝奏云](https://truebigsand.lanzouw.com/itI420jj9kdg)
