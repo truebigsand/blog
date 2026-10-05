@@ -12,6 +12,10 @@ import { dirname, join, relative, resolve } from "path"
 
 const POSTS_DIR = resolve("src/content/posts")
 
+// 图片由 Astro 资源管线处理（正文图片与 frontmatter image 都会产出 /_astro/ 优化版本），
+// 不需要再原样复制进产物，只有 zip/rar 这类附件才需要随产物一起发布
+const IMAGE_RE = /\.(png|jpe?g|gif|webp|avif|svg|bmp|ico)$/i
+
 /** 递归获取目录下所有非 .md/.mdx 文件 */
 function getAssetFiles(dir, baseDir = dir) {
 	const files = []
@@ -22,7 +26,7 @@ function getAssetFiles(dir, baseDir = dir) {
 		const fullPath = join(dir, entry.name)
 		if (entry.isDirectory()) {
 			files.push(...getAssetFiles(fullPath, baseDir))
-		} else if (!/\.(md|mdx)$/i.test(entry.name)) {
+		} else if (!/\.(md|mdx)$/i.test(entry.name) && !IMAGE_RE.test(entry.name)) {
 			files.push(relative(baseDir, fullPath))
 		}
 	}
