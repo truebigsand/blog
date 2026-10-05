@@ -1,0 +1,14 @@
+{
+	"truebigsand/audiodispatcher": {
+		"description": "Windows 多音频设备输出工具",
+		"language": "C#",
+		"avatarUrl": "https://avatars.githubusercontent.com/u/64719990?v=4",
+		"license": null
+	},
+	"truebigsand/megarac-next": {
+		"description": "AMI MegaRAC SP-X BMC Web UI 现代化重制版",
+		"language": "JavaScript",
+		"avatarUrl": "https://avatars.githubusercontent.com/u/64719990?v=4",
+		"license": null
+	}
+}

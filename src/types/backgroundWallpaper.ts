@@ -1,6 +1,7 @@
+export type FullscreenWallpaperLayout = "classic" | "hero";
+
 export type BackgroundWallpaperConfig = {
 	mode: "banner" | "fullscreen" | "overlay" | "none"; // 壁纸模式：banner横幅模式、fullscreen全屏壁纸、overlay全屏透明覆盖模式或none纯色背景
-	switchable?: boolean; // 是否允许用户通过导航栏切换壁纸模式，默认true
 	playerEnable?: boolean; // 是否启用背景视频播放，默认false
 	src:
 		| string
@@ -16,7 +17,6 @@ export type BackgroundWallpaperConfig = {
 		playerMode?: "order" | "random"; // 多视频播放模式："order" 顺序循环（默认），"random" 随机切换
 		homeText?: {
 			enable: boolean; // 是否在首页显示自定义文字（全局开关）
-			switchable?: boolean; // 是否允许用户通过控制面板切换横幅标题显示
 			title?: string; // 主标题
 			subtitle?: string | string[]; // 副标题，支持单个字符串或字符串数组
 			titleSize?: string; // 主标题字体大小，如 "3.5rem"
@@ -27,12 +27,22 @@ export type BackgroundWallpaperConfig = {
 				deleteSpeed: number; // 删除速度（毫秒）
 				pauseTime: number; // 完整显示后的暂停时间（毫秒）
 			};
+			// 首页横幅标题下方的链接图标（可选）
+			linksEnable?: boolean; // 是否显示标题下方的链接图标（默认 true）
+			links?: {
+				name: string; // 名称（用于 aria-label / title / 可选 showName 显示）
+				url: string; // 链接地址
+				icon: string; // Iconify 图标，如 "fa7-brands:github"
+				showName?: boolean; // 是否显示文字（默认 false）
+			}[];
 		};
-		navbar?: {
-			transparentMode?: "semi" | "full" | "semifull"; // 导航栏透明模式
-			enableBlur?: boolean; // 是否开启毛玻璃模糊效果
-			blur?: number; // 毛玻璃模糊度
+		// 壁纸轮播配置，横幅壁纸和全屏壁纸共享
+		carousel?: {
+			enable: boolean; // 是否启用壁纸轮播
+			interval?: number; // 轮播间隔时间，单位毫秒
+			transitionEffect?: "fade" | "zoom" | "slide" | "kenburns"; // 过渡效果: 'fade' 渐变 | 'zoom' 缩放 | 'slide' 滑动 | 'kenburns' 旋转木马
 		};
+		// 水波纹动画效果配置，横幅壁纸和全屏壁纸共享，开启会影响页面性能
 		waves?: {
 			enable:
 				| boolean
@@ -40,7 +50,6 @@ export type BackgroundWallpaperConfig = {
 						desktop: boolean; // 桌面端是否启用水波纹动画效果
 						mobile: boolean; // 移动端是否启用水波纹动画效果
 				  }; // 是否启用水波纹动画效果，支持布尔值或分别设置桌面端和移动端
-			switchable?: boolean; // 是否允许用户通过控制面板切换水波纹动画
 		};
 		// 渐变过渡效果配置，当水波纹关闭时自动启用，提供壁纸底部到背景色的平滑过渡
 		gradient?: {
@@ -51,14 +60,6 @@ export type BackgroundWallpaperConfig = {
 						mobile: boolean; // 移动端是否启用渐变过渡
 				  }; // 是否启用渐变过渡，支持布尔值或分别设置桌面端和移动端，默认true（水波纹关闭时自动生效）
 			height?: string; // 渐变高度，默认 "30vh"
-			switchable?: boolean; // 是否允许用户通过控制面板切换渐变过渡
-		};
-		// 壁纸轮播配置，横幅壁纸和全屏壁纸共享
-		carousel?: {
-			enable: boolean; // 是否启用壁纸轮播
-			interval?: number; // 轮播间隔时间，单位毫秒
-			transitionEffect?: "fade" | "zoom" | "slide" | "kenburns"; // 过渡效果: 'fade' 渐变 | 'zoom' 缩放 | 'slide' 滑动 | 'kenburns' 旋转木马
-			switchable?: boolean; // 是否允许用户通过控制面板切换壁纸轮播
 		};
 	};
 
@@ -84,16 +85,17 @@ export type BackgroundWallpaperConfig = {
 			| "right center"
 			| "right bottom"
 			| string; // 壁纸位置，支持CSS object-position的所有值，包括百分比和像素值
+		// 文章横幅信息："description" 显示描述，"meta" 显示日期、字数和阅读时长
+		postInfo?: {
+			mode: "description" | "meta";
+		};
+		navbar?: {
+			transparentMode?: "semi" | "semifull" | "none"; // 导航栏透明模式："semi" 半透明，"semifull" 动态透明，"none" 纯色不透明
+			blur?: number; // 毛玻璃模糊度，0 即关闭导航栏毛玻璃
+		};
 	};
 	// 全屏透明覆盖模式特有配置
 	overlay?: {
-		switchable?:
-			| boolean
-			| {
-					opacity?: boolean; // 是否允许用户在控制面板调整壁纸透明度
-					blur?: boolean; // 是否允许用户在控制面板调整背景模糊度
-					cardOpacity?: boolean; // 是否允许用户在控制面板调整卡片透明度
-			  }; // 透明模式参数是否可在控制面板调整，支持统一开关或分项开关
 		zIndex?: number; // 层级，确保壁纸在合适的层级显示
 		opacity?: number; // 壁纸透明度，0-1之间
 		blur?: number; // 背景模糊程度，单位px
@@ -101,6 +103,21 @@ export type BackgroundWallpaperConfig = {
 	};
 	// 全屏壁纸模式特有配置
 	fullscreen?: {
+		layout?: FullscreenWallpaperLayout; // 全屏布局：classic 文档流模式，hero 固定全屏首屏模式
 		position?: string; // 壁纸位置，支持CSS object-position的所有值
+		// 全屏壁纸模式的导航栏配置（仅有半透明/动态透明两种）
+		navbar?: {
+			transparentMode?: "semi" | "semifull"; // 导航栏透明模式："semi" 半透明，"semifull" 动态透明（仅首页顶部透明）
+			blur?: number; // 导航栏毛玻璃模糊度，0 即关闭（玻璃态生效）
+		};
+		// 首页下滑时壁纸模糊渐变开关（从 0 渐变为 overlay.blur 的最大模糊）
+		blurRamp?: {
+			enable:
+				| boolean
+				| {
+						desktop: boolean; // 桌面端是否启用模糊渐变
+						mobile: boolean; // 移动端是否启用模糊渐变
+				  }; // 是否启用模糊渐变，支持布尔值或分别设置桌面端和移动端，默认 true
+		};
 	};
 };

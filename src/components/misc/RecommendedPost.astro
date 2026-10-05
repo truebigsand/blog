@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config/siteConfig";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import type { PostForList } from "@/utils/content-utils";
@@ -9,20 +10,31 @@ import { getPostUrlBySlug, url } from "@/utils/url-utils";
 interface Props {
 	relatedPosts: PostForList[];
 	currentPostId: string;
+	showRelatedPosts?: boolean;
+	showRandomPosts?: boolean;
 }
 
-const { relatedPosts, currentPostId } = Astro.props;
+const {
+	relatedPosts,
+	currentPostId,
+	showRelatedPosts = siteConfig.post.relatedPosts,
+	showRandomPosts = siteConfig.post.randomPosts,
+} = Astro.props;
 const apiUrl = url("/api/allPostMeta.json");
 const relatedIds = JSON.stringify(relatedPosts.map((p) => p.id));
 const noRelatedPostsText = i18n(I18nKey.noRelatedPosts);
 const noRandomPostsText = i18n(I18nKey.noRandomPosts);
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div class:list={[
+  "grid grid-cols-1 gap-4 mb-4",
+  showRelatedPosts && showRandomPosts && "md:grid-cols-2",
+]}>
   {/* 左栏：相关文章（静态） */}
+  {showRelatedPosts && (
   <div class="card-base p-5 md:p-6 flex flex-col">
     <div class="flex items-center gap-2 pb-3 mb-1 border-b border-(--line-divider)">
-      <Icon is:inline
+      <Icon
         name="material-symbols:signpost"
         class="text-xl text-(--primary)"
       />
@@ -52,14 +64,14 @@ const noRandomPostsText = i18n(I18nKey.noRandomPosts);
             </div>
             <div class="flex items-center gap-1.5 text-xs text-black/30 dark:text-white/30 transition mt-0.5">
               {post.data.category && (
-                <span class="shrink-0 px-1.5 py-0.5 rounded bg-black/5 dark:bg-white/10 text-black/40 dark:text-white/40">
+                <span class="shrink-0 px-1.5 py-0.5 rounded-sm bg-black/5 dark:bg-white/10 text-black/40 dark:text-white/40">
                   {post.data.category}
                 </span>
               )}
               <span class="truncate">{post.data.description || formatDateToYYYYMMDD(post.data.published)}</span>
             </div>
           </div>
-          <Icon is:inline
+          <Icon
             name="material-symbols:chevron-right-rounded"
             class="shrink-0 text-xl text-black/15 dark:text-white/15 transition group-hover:text-(--primary) group-hover:translate-x-0.5"
           />
@@ -67,16 +79,18 @@ const noRandomPostsText = i18n(I18nKey.noRandomPosts);
       ))
     ) : (
       <div class="flex-1 flex flex-col items-center justify-center min-h-40 text-black/30 dark:text-white/30 transition">
-        <Icon is:inline name="material-symbols:article-outline" class="text-4xl mb-3 opacity-50" />
+        <Icon name="material-symbols:article-outline" class="text-4xl mb-3 opacity-50" />
         <span class="text-sm">{noRelatedPostsText}</span>
       </div>
     )}
   </div>
+  )}
 
   {/* 右栏：随机文章（客户端 fetch 渲染） */}
+  {showRandomPosts && (
   <div class="card-base p-5 md:p-6 flex flex-col">
     <div class="flex items-center gap-2 pb-3 mb-1 border-b border-(--line-divider)">
-      <Icon is:inline
+      <Icon
         name="material-symbols:recommend"
         class="text-xl text-(--primary)"
       />
@@ -95,13 +109,15 @@ const noRandomPostsText = i18n(I18nKey.noRandomPosts);
       data-related-ids={relatedIds}
     >
       <div id="random-posts-empty" style="display:none" class="flex flex-col items-center text-black/30 dark:text-white/30 transition">
-        <Icon is:inline name="material-symbols:article-outline" class="text-4xl mb-3 opacity-50" />
+        <Icon name="material-symbols:article-outline" class="text-4xl mb-3 opacity-50" />
         <span class="text-sm">{noRandomPostsText}</span>
       </div>
     </div>
   </div>
+  )}
 </div>
 
+{showRandomPosts && (
 <script is:inline>
 function renderRandomPosts() {
   var container = document.getElementById('random-posts-list');
@@ -170,7 +186,7 @@ function renderRandomPosts() {
 
       if (post.category) {
         var cat = document.createElement('span');
-        cat.className = 'shrink-0 px-1.5 py-0.5 rounded bg-black/5 dark:bg-white/10 text-black/40 dark:text-white/40';
+        cat.className = 'shrink-0 px-1.5 py-0.5 rounded-sm bg-black/5 dark:bg-white/10 text-black/40 dark:text-white/40';
         cat.textContent = post.category;
         meta.appendChild(cat);
       }
@@ -216,5 +232,10 @@ function renderRandomPosts() {
 }
 
 renderRandomPosts();
-document.addEventListener('swup:contentReplaced', renderRandomPosts);
+// 防止 Swup 切页重跑脚本时重复注册监听器（renderRandomPosts 每次切页仍需立即执行以渲染新页面）
+if (!window.__recommendedPostInit) {
+  window.__recommendedPostInit = true;
+  document.addEventListener('swup:contentReplaced', renderRandomPosts);
+}
 </script>
+)}

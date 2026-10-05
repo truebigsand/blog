@@ -13,17 +13,44 @@ export const ru: Translation = {
 	[Key.searchContent]: "Содержание",
 	[Key.searchViewMore]: "Показать еще ({count} шт)",
 	[Key.other]: "Прочее",
+
+	// Группы меню навигации
+	[Key.navArticles]: "Статьи",
+	[Key.navSocial]: "Соцсети",
+	[Key.navMine]: "Моё",
+	[Key.navAbout]: "Обо мне",
+	[Key.navLinks]: "Ссылки",
 	[Key.all]: "Все",
 
 	[Key.tags]: "Теги",
 	[Key.categories]: "Категории",
 	[Key.allCategories]: "Все категории",
 	[Key.allTags]: "Все теги",
+	[Key.allSeries]: "Все серии",
 	[Key.recentPosts]: "Последние посты",
 	[Key.postList]: "Список постов",
 	[Key.tableOfContents]: "Содержание",
 	[Key.tocEmpty]: "На этой странице нет оглавления",
 	[Key.music]: "Музыка",
+	[Key.dynamic]: "Моменты",
+	[Key.latestDynamics]: "Последние публикации",
+	[Key.moreDynamics]: "Больше публикаций",
+	[Key.dynamicDescription]: "Короткие мысли и моменты повседневной жизни.",
+	[Key.dynamicEmpty]: "Пока нет публикаций",
+	[Key.dynamicSearch]: "Поиск публикаций...",
+	[Key.dynamicNoResults]: "Подходящие публикации не найдены",
+	[Key.dynamicLoading]: "Загрузка публикаций",
+	[Key.dynamicAllYears]: "Все годы",
+	[Key.dynamicLoadMore]: "Загрузить ещё",
+	[Key.dynamicBackToList]: "Назад к публикациям",
+	[Key.dynamicProfile]: "Открыть профиль {name}",
+	[Key.dynamicPermalink]: "Постоянная ссылка на публикацию",
+	[Key.dynamicCollapseGallery]: "Свернуть",
+	[Key.dynamicViewOriginal]: "Открыть оригинал",
+	[Key.dynamicPreviousImage]: "Предыдущее изображение",
+	[Key.dynamicNextImage]: "Следующее изображение",
+	[Key.dynamicViewImage]: "Открыть изображение {index}",
+	[Key.dynamicSelectImage]: "Выбрать изображение {index}",
 	[Key.musicNoPlaying]: "Ничего не воспроизводится",
 	[Key.musicLyrics]: "Текст песни",
 	[Key.musicVolume]: "Громкость",
@@ -58,6 +85,23 @@ export const ru: Translation = {
 		"Вот мои друзья, добро пожаловать посетить и общаться друг с другом",
 	[Key.searchFriends]: "Поиск друзей...",
 	[Key.friendsEmpty]: "Друзей пока нет.",
+	[Key.booknav]: "Каталог закладок",
+	[Key.booknavDescription]:
+		"Подборка полезных сайтов, сгруппированных по категориям.",
+	[Key.searchBooknav]: "Поиск закладок...",
+	[Key.booknavEmpty]: "Закладок пока нет.",
+
+	// Витрина проектов
+	[Key.projects]: "Проекты",
+	[Key.projectsDescription]: "Мои разработанные проекты",
+	[Key.projectDetails]: "Подробнее",
+	[Key.projectBack]: "К списку проектов",
+	[Key.projectEmpty]: "Проектов пока нет",
+	[Key.projectSearch]: "Поиск проектов",
+	[Key.projectStatusPlanning]: "В планах",
+	[Key.projectStatusDeveloping]: "В разработке",
+	[Key.projectStatusPublished]: "Опубликовано",
+	[Key.projectStatusArchived]: "В архиве",
 	[Key.guestbook]: "Гостевая книга",
 	[Key.guestbookDescription]:
 		"Добро пожаловать, оставьте свой след здесь, поделитесь своими мыслями и предложениями",
@@ -88,10 +132,10 @@ export const ru: Translation = {
 	[Key.updatedAt]: "Обновлено",
 	[Key.readTime]: "Время чтения",
 	[Key.license]: "Лицензия",
-	[Key.bangumi]: "Бангуми",
+	[Key.bangumi]: "Bangumi",
 
 	// Фильтр и статус Бангуми текст
-	[Key.bangumiTitle]: "Мой план группы",
+	[Key.bangumiTitle]: "Мой Bangumi",
 	[Key.bangumiSubtitle]: "Запись моего аниме путешествия",
 	[Key.bangumiFilterAll]: "Все",
 	[Key.bangumiFilterWatched]: "Просмотрено",
@@ -149,14 +193,50 @@ export const ru: Translation = {
 	[Key.bangumiCategoryReal]: "Реальный",
 
 	// Обновление данных Бангуми
-	[Key.bangumiLastUpdated]: "Данные обновлены",
+	[Key.bangumiLastUpdated]: "Дата обновления данных",
 	[Key.bangumiUpdatedAt]: "Время сборки",
 	[Key.bangumiDataStatic]: "Статические данные",
 
-	// Отслеживание аниме
-	[Key.anime]: "Аниме",
-	[Key.animeSubtitle]:
-		"Мой список отслеживания аниме, данные из Bilibili и TMDB",
+	// VNDB
+	[Key.vndb]: "VNDB",
+	[Key.vndbSubtitle]: "Мой список визуальных новелл VNDB",
+	[Key.vndbFilterAll]: "Все",
+	[Key.vndbFilterVoted]: "Оценено",
+	[Key.vndbFilterUnvoted]: "Без оценки",
+	[Key.vndbFilterNotes]: "С заметками",
+	[Key.vndbStatusWishlist]: "Хочу сыграть",
+	[Key.vndbStatusPlaying]: "Играю",
+	[Key.vndbStatusFinished]: "Пройдено",
+	[Key.vndbStatusStalled]: "Отложено",
+	[Key.vndbStatusDropped]: "Брошено",
+	[Key.vndbStatusUnknown]: "Неизвестно",
+	[Key.vndbNoData]: "Нет данных",
+	[Key.vndbNoDataDescription]: "В этой категории нет элементов",
+	[Key.vndbEmpty]: "Нет данных",
+	[Key.vndbEmptyReason]:
+		"Возможные причины: ID пользователя не существует, список закрыт, проблемы с сетью или ограничение API",
+	[Key.vndbFetchError]: "Ошибка загрузки данных VNDB",
+	[Key.vndbFetchErrorDesc]:
+		"Не удалось загрузить данные из VNDB API при сборке. Эта страница временно недоступна.",
+	[Key.vndbNotConfigured]: "ID пользователя VNDB не настроен",
+	[Key.vndbNotConfiguredDesc]:
+		"Укажите ID пользователя VNDB в src/config/siteConfig.ts",
+	[Key.vndbLastUpdated]: "Дата обновления данных",
+	[Key.vndbVotes]: "голосов",
+	[Key.vndbLengthVeryShort]: "Очень короткая",
+	[Key.vndbLengthShort]: "Короткая",
+	[Key.vndbLengthMedium]: "Средняя",
+	[Key.vndbLengthLong]: "Длинная",
+	[Key.vndbLengthVeryLong]: "Очень длинная",
+
+	// Отслеживание аниме - Bilibili
+	[Key.bilibili]: "Bilibili",
+	[Key.bilibiliSubtitle]: "Мой список Bilibili (аниме и сериалы)",
+	[Key.bilibiliNotConfigured]: "Источник данных Bilibili не настроен",
+	[Key.bilibiliNotConfiguredDesc]:
+		"Настройте bilibili.uid в src/config/siteConfig.ts",
+
+	// Отслеживание аниме - общие компоненты
 	[Key.animeTotal]: "Всего",
 	[Key.animeAverageRating]: "Средний рейтинг",
 	[Key.animeSearch]: "Поиск аниме...",
@@ -168,21 +248,14 @@ export const ru: Translation = {
 	[Key.animeDateDesc]: "Сначала новые",
 	[Key.animeDateAsc]: "Сначала старые",
 	[Key.animeNoResults]: "Аниме не найдено",
-	[Key.animeLastUpdated]: "Данные обновлены",
-	[Key.animeSource]: "Источник",
+	[Key.animeLastUpdated]: "Дата обновления данных",
 	[Key.animeEpStatus]: "Прогресс",
 	[Key.animeViewDetails]: "Подробнее",
-	[Key.animeNotConfigured]: "Источник данных не настроен",
-	[Key.animeNotConfiguredDesc]:
-		"Настройте Bilibili UID или TMDB API Key в src/config/siteConfig.ts",
 	[Key.animeBilibiliAvg]: "Bilibili ср.",
-	[Key.animeTmdbAvg]: "TMDB ср.",
-	[Key.animeDualSynced]: "Два источника",
 	[Key.animeNoOverview]: "Нет описания",
 	[Key.animeClose]: "Закрыть",
 	[Key.animeSynopsis]: "Описание",
 	[Key.animeWatchNow]: "Смотреть",
-	[Key.animeViewTmdb]: "Подробнее на TMDB",
 	[Key.animeAllWithCount]: "Все ({count})",
 	[Key.animeTVWithCount]: "ТВ ({count})",
 	[Key.animeMovieWithCount]: "Фильм ({count})",
@@ -193,6 +266,36 @@ export const ru: Translation = {
 	[Key.animeTypeDrama]: "Сериал",
 	[Key.animeTypeConcert]: "Концерт",
 
+	// MyAnimeList
+	[Key.mal]: "MyAnimeList",
+	[Key.malSubtitle]: "Мои списки аниме и манги из MyAnimeList",
+	[Key.malCategoryAnime]: "Аниме",
+	[Key.malCategoryManga]: "Манга",
+	[Key.malFilterAll]: "Все",
+	[Key.malStatusWatching]: "Смотрю",
+	[Key.malStatusReading]: "Читаю",
+	[Key.malStatusCompleted]: "Просмотрено",
+	[Key.malStatusOnHold]: "Отложено",
+	[Key.malStatusDropped]: "Брошено",
+	[Key.malStatusPlanToWatch]: "Хочу посмотреть",
+	[Key.malStatusPlanToRead]: "Хочу прочитать",
+	[Key.malNoData]: "Нет данных",
+	[Key.malNoDataDescription]: "В этой категории нет элементов",
+	[Key.malEmpty]: "Нет данных",
+	[Key.malEmptyReason]:
+		"Возможные причины: имя пользователя не существует, список закрыт, неверный Client ID или проблема с сетью",
+	[Key.malFetchError]: "Ошибка загрузки данных MyAnimeList",
+	[Key.malFetchErrorDesc]:
+		"Не удалось загрузить данные из MyAnimeList API при сборке. Проверьте имя пользователя и Client ID, а также убедитесь, что список открыт.",
+	[Key.malNotConfigured]: "MyAnimeList не настроен",
+	[Key.malNotConfiguredDesc]:
+		"Укажите имя пользователя и Client ID MyAnimeList в src/config/siteConfig.ts (список должен быть открытым)",
+	[Key.malLastUpdated]: "Дата обновления данных",
+	[Key.malSeasonWinter]: "Зима",
+	[Key.malSeasonSpring]: "Весна",
+	[Key.malSeasonSummer]: "Лето",
+	[Key.malSeasonFall]: "Осень",
+
 	// Пагинация
 	[Key.paginationFirst]: "Первая",
 	[Key.paginationPrev]: "Предыдущая",
@@ -202,6 +305,7 @@ export const ru: Translation = {
 	[Key.paginationOf]: "из",
 	[Key.paginationTotal]: ", всего",
 	[Key.paginationRecords]: " записей",
+	[Key.paginationJump]: "Перейти к странице",
 
 	// 404 Страница
 	[Key.notFound]: "404",
@@ -233,6 +337,15 @@ export const ru: Translation = {
 	[Key.rssCopyFailed]:
 		"Ошибка копирования, пожалуйста, скопируйте ссылку вручную",
 
+	// Atom Page
+	[Key.atom]: "Atom-лента",
+	[Key.atomDescription]: "Подпишитесь на последние обновления",
+	[Key.atomSubtitle]:
+		"Подпишитесь через Atom, чтобы сразу получать последние статьи и обновления",
+	[Key.atomLink]: "Atom-ссылка",
+	[Key.atomCopyToReader]: "Скопируйте ссылку в свой Atom-ридер",
+	[Key.atomCopied]: "Atom-ссылка скопирована в буфер обмена!",
+
 	// Последнее изменение
 	[Key.lastModifiedPrefix]: "Последнее обновление: ",
 	[Key.lastModifiedOutdated]: "Некоторый контент может быть устаревшим",
@@ -260,6 +373,13 @@ export const ru: Translation = {
 	[Key.noRelatedPosts]: "Нет похожих статей",
 	[Key.noRandomPosts]: "Нет случайных статей",
 
+	// Серия статей
+	[Key.series]: "Серии",
+	[Key.seriesPartOf]: "Часть серии",
+	[Key.seriesPart]: "Часть {n}",
+	[Key.seriesThisArticle]: "Эта статья",
+	[Key.noSeries]: "Пока нет серий",
+
 	// Зашифровано
 	[Key.postEncrypted]: "Эта статья зашифрована",
 
@@ -267,6 +387,9 @@ export const ru: Translation = {
 	[Key.wallpaperMode]: "Режим обоев",
 	[Key.wallpaperBannerMode]: "Баннер обои",
 	[Key.wallpaperFullscreenMode]: "Полноэкранные обои",
+	[Key.fullscreenLayout]: "Полноэкранный макет",
+	[Key.fullscreenClassicLayout]: "Классический",
+	[Key.fullscreenHeroLayout]: "Hero",
 	[Key.wallpaperOverlayMode]: "Прозрачный",
 	[Key.wallpaperNoneMode]: "Однотонный фон",
 
@@ -282,6 +405,16 @@ export const ru: Translation = {
 	[Key.overlayOpacity]: "Прозрачность обоев",
 	[Key.overlayBlur]: "Размытие фона",
 	[Key.overlayCardOpacity]: "Прозрачность карточек",
+
+	// Вкладки панели настроек
+	[Key.settingsTabAppearance]: "Оформление",
+	[Key.settingsTabWallpaper]: "Обои",
+	[Key.settingsTabEffects]: "Эффекты",
+
+	// Стиль карточек
+	[Key.cardSettings]: "Стиль карточек",
+	[Key.cardBorder]: "Рамка и тень карточек",
+	[Key.cardFollowTheme]: "Карточки跟随主题色",
 
 	// Макет списка сообщений
 	[Key.postListLayout]: "Макет списка сообщений",
@@ -313,6 +446,7 @@ export const ru: Translation = {
 	// Статистика сайта
 	[Key.siteStats]: "Статистика сайта",
 	[Key.siteStatsPostCount]: "Статьи",
+	[Key.siteStatsDynamicCount]: "Публикации",
 	[Key.siteStatsCategoryCount]: "Категории",
 	[Key.siteStatsTagCount]: "Теги",
 	[Key.siteStatsTotalWords]: "Всего слов",
@@ -380,6 +514,7 @@ export const ru: Translation = {
 	[Key.galleryAlbums]: "альбомов",
 	[Key.galleryNoAlbums]: "Пока нет альбомов",
 	[Key.galleryBackToAlbums]: "Вернуться к альбомам",
+	[Key.galleryEnterAlbum]: "Открыть альбом",
 	[Key.searchAlbums]: "Поиск альбомов...",
 
 	// Защита паролем
@@ -399,4 +534,11 @@ export const ru: Translation = {
 	[Key.videoPrev]: "Предыдущее видео",
 	[Key.videoNext]: "Следующее видео",
 	[Key.videoLoadError]: "Не удалось загрузить видео",
+
+	// Чтение без отвлечений
+	[Key.immersiveReading]: "Чтение без отвлечений",
+	[Key.enterImmersiveReading]: "Войти в режим чтения",
+	[Key.exitImmersiveReading]: "Выйти из режима чтения",
+	[Key.tocExpand]: "Развернуть оглавление",
+	[Key.tocCollapse]: "Свернуть оглавление",
 };

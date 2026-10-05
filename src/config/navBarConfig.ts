@@ -36,36 +36,21 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	// 友链
 	links.push(LinkPresets.Friends);
 
-	// 留言板
-	// links.push(LinkPresets.Guestbook);
-
-	// 我的及其子菜单
+	// 追番及其子菜单
 	links.push({
 		name: "追番",
 		url: "#",
 		icon: "material-symbols:live-tv",
 		children: [
-			// 相册
-			// LinkPresets.Gallery,
+			// 番组计划
 			LinkPresets.Bangumi,
+
 			// B站追番
-			LinkPresets.Anime,
+			LinkPresets.Bilibili,
 		],
 	});
 
-	// 关于及其子菜单
-	// links.push({
-	// 	name: "关于",
-	// 	url: "#",
-	// 	icon: "material-symbols:info",
-	// 	children: [
-	// 		// 打赏
-	// 		LinkPresets.Sponsor,
-
-	// 		// 关于页面
-	// 		LinkPresets.About,
-	// 	],
-	// });
+	// 关于页面
 	links.push(LinkPresets.About);
 
 	// 自定义导航栏链接
@@ -92,16 +77,17 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 				url: "/posts/developer-club-textbook-2023/",
 				external: false,
 				icon: "material-symbols:book",
-			}
+			},
 		],
 	});
 
+	// 开往
 	links.push({
 		name: "开往",
 		url: "https://www.travellings.cn/go.html",
 		external: true,
-		icon: "fa7-solid:train-subway"
-	})
+		icon: "fa7-solid:train-subway",
+	});
 
 	return { links } as NavBarConfig;
 };
@@ -136,17 +122,16 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/tags/",
 		icon: "material-symbols:tag-rounded",
 	},
+	Series: {
+		name: "系列",
+		url: "/series/",
+		icon: "material-symbols:layers",
+	},
 	Friends: {
 		name: "友链",
 		url: "/friends/",
-		icon: "material-symbols:group",
+		icon: "material-symbols:link-2-rounded",
 		pageKey: "friends",
-	},
-	Sponsor: {
-		name: "打赏",
-		url: "/sponsor/",
-		icon: "material-symbols:favorite",
-		pageKey: "sponsor",
 	},
 	Guestbook: {
 		name: "留言",
@@ -154,16 +139,17 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:chat",
 		pageKey: "guestbook",
 	},
-	About: {
-		name: "关于我",
-		url: "/about/",
-		icon: "material-symbols:person",
+	Dynamic: {
+		name: "动态",
+		url: "/dynamic/",
+		icon: "material-symbols:forum-rounded",
+		pageKey: "dynamic",
 	},
-	Bangumi: {
-		name: "番组计划 Bangumi",
-		url: "/bangumi/",
-		icon: "material-symbols:movie",
-		pageKey: "bangumi",
+	Projects: {
+		name: "项目",
+		url: "/projects/",
+		icon: "material-symbols:rocket-launch",
+		pageKey: "projects",
 	},
 	Gallery: {
 		name: "相册",
@@ -171,11 +157,46 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:photo-library",
 		pageKey: "gallery",
 	},
-	Anime: {
-		name: "Bilibili",
-		url: "/anime/",
+	Booknav: {
+		name: "书签导航",
+		url: "/booknav/",
+		icon: "material-symbols:bookmarks",
+		pageKey: "booknav",
+	},
+	Bilibili: {
+		name: "哔哩哔哩",
+		url: "/bilibili/",
 		icon: "fa7-brands:bilibili",
-		pageKey: "anime",
+		pageKey: "bilibili",
+	},
+	Bangumi: {
+		name: "番组计划",
+		url: "/bangumi/",
+		icon: "material-symbols:movie",
+		pageKey: "bangumi",
+	},
+	VNDB: {
+		name: "VNDB",
+		url: "/vndb/",
+		icon: "material-symbols:chrome-reader-mode-rounded",
+		pageKey: "vndb",
+	},
+	MAL: {
+		name: "AnimeList",
+		url: "/myanimelist/",
+		icon: "material-symbols:menu-book",
+		pageKey: "mal",
+	},
+	Sponsor: {
+		name: "打赏",
+		url: "/sponsor/",
+		icon: "material-symbols:favorite",
+		pageKey: "sponsor",
+	},
+	About: {
+		name: "关于我",
+		url: "/about/",
+		icon: "material-symbols:person",
 	},
 };
 

@@ -1,6 +1,7 @@
 ---
 import type { Page } from "astro";
 import { Icon } from "astro-icon/components";
+import PageJump from "@/components/common/PageJump.svelte";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import { url } from "@/utils/url-utils";
@@ -51,6 +52,10 @@ const getPageUrl = (p: number) => {
 	if (p === 1) return "/";
 	return `/${p}/`;
 };
+
+// 传给 PageJump island 的跳转模板。函数没法跨 island 边界传，只能给字符串
+const jumpHrefTemplate = url("/{page}/");
+const jumpHrefFirst = url("/");
 ---
 
 <div class:list={[className, "pagination-wrapper flex flex-col gap-4 items-center"]} style={style}>
@@ -60,38 +65,55 @@ const getPageUrl = (p: number) => {
     <div class="mobile-pagination flex items-center gap-3">
       <a
         href={page.url.prev || "#"}
+        rel={page.url.prev ? "prev" : undefined}
         aria-label={i18n(I18nKey.paginationPrev)}
-        aria-disabled={page.url.prev === undefined ? "true" : "false"}
-        tabindex={page.url.prev === undefined ? "-1" : "0"}
+        aria-disabled={!page.url.prev ? "true" : "false"}
+        tabindex={!page.url.prev ? "-1" : "0"}
         class:list={[
-          "btn-card overflow-hidden rounded-lg text-(--primary) w-11 h-11",
-          { disabled: page.url.prev == undefined },
+          "btn-card overflow-hidden rounded-(--radius-large) text-(--primary) w-11 h-11",
+          {
+            disabled: !page.url.prev,
+            "opacity-50": !page.url.prev,
+            "cursor-not-allowed": !page.url.prev,
+          },
         ]}
       >
-        <Icon is:inline
+        <Icon
           name="material-symbols:chevron-left-rounded"
           class="text-[1.75rem]"
           aria-hidden="true"
         />
       </a>
 
-      <div class="btn-card flex items-center rounded-lg px-4 h-11 gap-1.5">
-        <span class="text-base font-bold text-(--primary)">{page.currentPage}</span>
+      <div class="btn-card flex items-center rounded-(--radius-large) px-4 h-11 gap-1.5">
+        <PageJump
+          client:load
+          variant="current"
+          currentPage={page.currentPage}
+          lastPage={page.lastPage}
+          hrefTemplate={jumpHrefTemplate}
+          hrefFirst={jumpHrefFirst}
+        />
         <span class="text-sm text-neutral-500 dark:text-neutral-500">/</span>
         <span class="text-base font-bold text-neutral-700 dark:text-neutral-300">{page.lastPage}</span>
       </div>
 
       <a
         href={page.url.next || "#"}
+        rel={page.url.next ? "next" : undefined}
         aria-label={i18n(I18nKey.paginationNext)}
-        aria-disabled={page.url.next === undefined ? "true" : "false"}
-        tabindex={page.url.next === undefined ? "-1" : "0"}
+        aria-disabled={!page.url.next ? "true" : "false"}
+        tabindex={!page.url.next ? "-1" : "0"}
         class:list={[
-          "btn-card overflow-hidden rounded-lg text-(--primary) w-11 h-11",
-          { disabled: page.url.next == undefined },
+          "btn-card overflow-hidden rounded-(--radius-large) text-(--primary) w-11 h-11",
+          {
+            disabled: !page.url.next,
+            "opacity-50": !page.url.next,
+            "cursor-not-allowed": !page.url.next,
+          },
         ]}
       >
-        <Icon is:inline
+        <Icon
           name="material-symbols:chevron-right-rounded"
           class="text-[1.75rem]"
           aria-hidden="true"
@@ -103,15 +125,20 @@ const getPageUrl = (p: number) => {
     <div class="desktop-pagination flex items-center gap-3">
       <a
         href={page.url.prev || "#"}
+        rel={page.url.prev ? "prev" : undefined}
         aria-label={i18n(I18nKey.paginationPrev)}
-        aria-disabled={page.url.prev === undefined ? "true" : "false"}
-        tabindex={page.url.prev === undefined ? "-1" : "0"}
+        aria-disabled={!page.url.prev ? "true" : "false"}
+        tabindex={!page.url.prev ? "-1" : "0"}
         class:list={[
-          "btn-card overflow-hidden rounded-lg text-(--primary) w-11 h-11",
-          { disabled: page.url.prev == undefined },
+          "btn-card overflow-hidden rounded-(--radius-large) text-(--primary) w-11 h-11",
+          {
+            disabled: !page.url.prev,
+            "opacity-50": !page.url.prev,
+            "cursor-not-allowed": !page.url.prev,
+          },
         ]}
       >
-        <Icon is:inline
+        <Icon
           name="material-symbols:chevron-left-rounded"
           class="text-[1.75rem]"
           aria-hidden="true"
@@ -120,11 +147,20 @@ const getPageUrl = (p: number) => {
       {
         pages.map((p) => {
           if (p == HIDDEN)
-            return <Icon is:inline name="material-symbols:more-horiz" class="w-11 h-11 flex items-center justify-center text-neutral-700 dark:text-neutral-300" aria-hidden="true" />;
+            return (
+              <PageJump
+                client:load
+                variant="ellipsis"
+                currentPage={page.currentPage}
+                lastPage={page.lastPage}
+                hrefTemplate={jumpHrefTemplate}
+                hrefFirst={jumpHrefFirst}
+              />
+            );
           if (p == page.currentPage)
             return (
               <div
-                class="h-11 w-11 rounded-lg bg-(--primary) flex items-center justify-center
+                class="h-11 w-11 rounded-(--radius-large) bg-(--primary) flex items-center justify-center
                         font-bold text-white dark:text-black/70"
                 aria-current="page"
               >
@@ -135,7 +171,7 @@ const getPageUrl = (p: number) => {
             <a
               href={url(getPageUrl(p))}
               aria-label={`${i18n(I18nKey.paginationPage)} ${p}`}
-              class="btn-card w-11 h-11 rounded-lg overflow-hidden active:scale-[0.85] text-neutral-700 dark:text-neutral-300"
+              class="btn-card w-11 h-11 rounded-(--radius-large) overflow-hidden active:scale-[0.85] font-bold text-neutral-700 dark:text-neutral-300"
             >
               {p}
             </a>
@@ -144,15 +180,20 @@ const getPageUrl = (p: number) => {
       }
       <a
         href={page.url.next || "#"}
+        rel={page.url.next ? "next" : undefined}
         aria-label={i18n(I18nKey.paginationNext)}
-        aria-disabled={page.url.next === undefined ? "true" : "false"}
-        tabindex={page.url.next === undefined ? "-1" : "0"}
+        aria-disabled={!page.url.next ? "true" : "false"}
+        tabindex={!page.url.next ? "-1" : "0"}
         class:list={[
-          "btn-card overflow-hidden rounded-lg text-(--primary) w-11 h-11",
-          { disabled: page.url.next == undefined },
+          "btn-card overflow-hidden rounded-(--radius-large) text-(--primary) w-11 h-11",
+          {
+            disabled: !page.url.next,
+            "opacity-50": !page.url.next,
+            "cursor-not-allowed": !page.url.next,
+          },
         ]}
       >
-        <Icon is:inline
+        <Icon
           name="material-symbols:chevron-right-rounded"
           class="text-[1.75rem]"
           aria-hidden="true"

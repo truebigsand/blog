@@ -4,6 +4,7 @@ import Advertisement from "@/components/widget/Advertisement.astro";
 import Announcement from "@/components/widget/Announcement.astro";
 import Calendar from "@/components/widget/Calendar.astro";
 import Categories from "@/components/widget/Categories.astro";
+import Dynamic from "@/components/widget/Dynamic.astro";
 import Music from "@/components/widget/Music.astro";
 import Profile from "@/components/widget/Profile.astro";
 import SidebarTOC from "@/components/widget/SidebarTOC.astro";
@@ -15,10 +16,13 @@ import type {
 	MobileBottomComponentConfig,
 	WidgetComponentConfig,
 } from "@/types/config";
+import { isWidgetVisibleOnPageType } from "@/utils/responsive-utils";
+import { isArticleDetailPage } from "@/utils/url-utils";
 
 interface Props {
 	class?: string;
 	headings?: MarkdownHeading[];
+	encrypted?: boolean;
 	side?: "left" | "right" | "bottom";
 }
 
@@ -50,6 +54,7 @@ const componentMap = {
 	calendar: Calendar,
 	music: Music,
 	siteInfo: SiteInfo,
+	dynamic: Dynamic,
 };
 
 // 获取侧边栏位置
@@ -99,29 +104,14 @@ const getAnimationDelay = (index: number): string => {
 	return `${index * ANIMATION_DELAY_UNIT}ms`;
 };
 
-// 判断当前页面是否为文章页面（服务端渲染时确定）
-const isPostPage = Astro.url.pathname.includes("/posts/");
+// 判断当前页面是否为文章/项目详情页（服务端渲染时确定）
+const isPostPage = isArticleDetailPage(Astro.url.pathname);
 
 // 判断组件在当前页面首屏是否可见（用于计算布局间距，避免隐藏组件占位）
+// 谓词与列几何共用 isWidgetVisibleOnPageType，避免两处规则漂移
 const isComponentInitiallyVisible = (
 	config: WidgetComponentConfig | MobileBottomComponentConfig,
-): boolean => {
-	if (
-		"showOnPostPage" in config &&
-		config.showOnPostPage === false &&
-		isPostPage
-	) {
-		return false;
-	}
-	if (
-		"hideOnNonPostPage" in config &&
-		config.hideOnNonPostPage === true &&
-		!isPostPage
-	) {
-		return false;
-	}
-	return true;
-};
+): boolean => isWidgetVisibleOnPageType(config, isPostPage);
 
 // 动态构建组件 props
 const getComponentProps = (
@@ -151,7 +141,11 @@ const getComponentProps = (
 
 	// 特殊处理 SidebarTOC 组件
 	if (config.type === "sidebarToc") {
-		return { ...baseProps, headings: Astro.props.headings || [] };
+		return {
+			...baseProps,
+			headings: Astro.props.headings || [],
+			encrypted: Astro.props.encrypted || false,
+		};
 	}
 
 	return baseProps;

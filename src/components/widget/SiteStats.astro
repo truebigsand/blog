@@ -117,21 +117,21 @@ const stats = [
       <div class="flex items-center justify-between px-3 py-1.5">
         <div class="flex items-center gap-2.5">
           <div class="text-(--primary) text-xl">
-            <Icon is:inline name={stat.icon} />
+            <Icon name={stat.icon} />
           </div>
           <span class="text-neutral-700 dark:text-neutral-300 font-medium text-sm">
             {stat.label}
           </span>
         </div>
         <div class="flex items-center">
-          <span 
+          <span
             class="text-base font-bold text-neutral-900 dark:text-neutral-100"
             data-stat-id={stat.id}
           >
             {stat.formatted ? formatNumber(stat.value) : stat.value}
           </span>
           {stat.suffix && (
-            <span class="text-sm text-neutral-500 dark:text-neutral-400 ml-1">
+            <span class="ml-1 text-sm text-neutral-500 dark:text-neutral-400">
               {stat.suffix}
             </span>
           )}
@@ -181,8 +181,12 @@ const stats = [
   // 页面加载时更新
   updateDynamicStats();
 
-  // 页面切换时重新更新
-  document.addEventListener("swup:contentReplaced", () => {
-    setTimeout(updateDynamicStats, 100);
-  });
+  // 防止 Swup 切页重跑脚本时重复注册监听器
+  if (!window.__siteStatsInit) {
+    window.__siteStatsInit = true;
+    // 页面切换时重新更新
+    document.addEventListener("swup:contentReplaced", () => {
+      setTimeout(updateDynamicStats, 100);
+    });
+  }
 </script>

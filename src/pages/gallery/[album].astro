@@ -6,6 +6,7 @@ import { galleryConfig, siteConfig } from "@/config";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import "@/styles/pages/gallery-album.css";
 import { getAlbumCover, scanAlbumPhotos } from "@/utils/gallery-utils";
 import { getLqipProps } from "@/utils/lqip-utils";
 import { url } from "@/utils/url-utils";
@@ -42,20 +43,20 @@ const coverLqipProps = cover
   <!-- 相册封面横幅 -->
   <div class="w-full rounded-(--radius-large) overflow-hidden relative">
     {cover ? (
-      <div class="relative w-full aspect-[3/1] min-h-[200px] max-h-[360px] overflow-hidden">
+      <div class="relative w-full aspect-3/1 min-h-[200px] max-h-[360px] overflow-hidden">
         <div class="lqip-placeholder absolute inset-0 pointer-events-none" style={coverLqipProps.style} aria-hidden="true"></div>
         <img
           src={cover}
           alt={albumMeta.name}
           class="w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-out"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+        <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
         <!-- 返回按钮 -->
         <a
           href={url("/gallery/")}
           class="absolute top-4 left-4 inline-flex items-center gap-1.5 text-sm text-white/90 hover:text-white bg-black/30 hover:bg-black/50 backdrop-blur-sm px-3 py-1.5 rounded-lg transition-colors"
         >
-          <Icon is:inline name="material-symbols:arrow-back" class="text-base" />
+          <Icon name="material-symbols:arrow-back" class="text-base" />
           {i18n(I18nKey.galleryBackToAlbums)}
         </a>
         <!-- 封面上的信息 -->
@@ -71,18 +72,18 @@ const coverLqipProps = cover
           <div class="flex items-center gap-4 text-sm text-white/80 flex-wrap">
             {albumMeta.date && (
               <span class="inline-flex items-center gap-1">
-                <Icon is:inline name="material-symbols:calendar-today" class="text-sm" />
+                <Icon name="material-symbols:calendar-today" class="text-sm" />
                 {albumMeta.date}
               </span>
             )}
             {albumMeta.location && (
               <span class="inline-flex items-center gap-1">
-                <Icon is:inline name="material-symbols:location-on" class="text-sm" />
+                <Icon name="material-symbols:location-on" class="text-sm" />
                 {albumMeta.location}
               </span>
             )}
             <span class="inline-flex items-center gap-1">
-              <Icon is:inline name="material-symbols:photo-library" class="text-sm" />
+              <Icon name="material-symbols:photo-library" class="text-sm" />
               {photos.length} {i18n(I18nKey.galleryPhotos)}
             </span>
           </div>
@@ -103,7 +104,7 @@ const coverLqipProps = cover
           href={url("/gallery/")}
           class="inline-flex items-center gap-1 text-sm text-(--primary) hover:underline mb-3"
         >
-          <Icon is:inline name="material-symbols:arrow-back" class="text-base" />
+          <Icon name="material-symbols:arrow-back" class="text-base" />
           {i18n(I18nKey.galleryBackToAlbums)}
         </a>
         <div class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100">
@@ -112,13 +113,13 @@ const coverLqipProps = cover
         <div class="flex items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mt-2 flex-wrap">
           {albumMeta.date && (
             <span class="inline-flex items-center gap-1">
-              <Icon is:inline name="material-symbols:calendar-today" class="text-sm" />
+              <Icon name="material-symbols:calendar-today" class="text-sm" />
               {albumMeta.date}
             </span>
           )}
           {albumMeta.location && (
             <span class="inline-flex items-center gap-1">
-              <Icon is:inline name="material-symbols:location-on" class="text-sm" />
+              <Icon name="material-symbols:location-on" class="text-sm" />
               {albumMeta.location}
             </span>
           )}
@@ -155,7 +156,7 @@ const coverLqipProps = cover
         )
       ) : (
         <div class="flex flex-col items-center justify-center py-16 text-neutral-400 dark:text-neutral-500">
-          <Icon is:inline name="material-symbols:photo-library" class="text-6xl mb-4 opacity-50" />
+          <Icon name="material-symbols:photo-library" class="text-6xl mb-4 opacity-50" />
           <p class="text-lg">{i18n(I18nKey.galleryNoAlbums)}</p>
         </div>
       )}

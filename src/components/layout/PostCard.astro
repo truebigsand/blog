@@ -4,9 +4,8 @@ import { render } from "astro:content";
 import { Icon } from "astro-icon/components";
 import CoverImage from "@/components/common/CoverImage.astro";
 import PostMetadata from "@/components/layout/PostMeta.astro";
+import PostStats from "@/components/layout/PostStats.astro";
 import { siteConfig } from "@/config";
-import I18nKey from "@/i18n/i18nKey";
-import { i18n } from "@/i18n/translation";
 import { getApiUrlList, processCoverImageSync } from "@/utils/image-utils";
 import { getFileDirFromPath, getTagUrl } from "@/utils/url-utils";
 
@@ -53,16 +52,53 @@ const hasCover =
 
 const coverWidth = "30%";
 
-const showTags = siteConfig.postListLayout.showTags;
+// 网格模式封面是否撑满卡片贴边，false 则按卡片内容区的内边距内缩（间距随断点变化）
+const gridCoverFullWidth =
+	siteConfig.postListLayout.grid.coverFullWidth ?? false;
+
 const descriptionLines = Math.max(
 	0,
 	Math.trunc(siteConfig.postListLayout.descriptionLines ?? 2),
 );
+
+// PostMeta 配置
+const metaConfig = siteConfig.postListLayout.meta ?? {};
+const showCategory = metaConfig.showCategory ?? true;
+const metaShowTags = metaConfig.showTags ?? true;
+const metaTagCount =
+	metaConfig.tagCount !== undefined
+		? Math.max(0, Math.trunc(metaConfig.tagCount))
+		: 1;
+const metaShowWords = metaConfig.showWords ?? true;
+const metaShowReadingTime = metaConfig.showReadingTime ?? true;
+const metaShowPublished = metaConfig.showPublished ?? true;
+
+// PostStats 配置
+const statsConfig = siteConfig.postListLayout.stats ?? {};
+const statsShowPublished = statsConfig.showPublished ?? true;
+const statsShowWords = statsConfig.showWords ?? true;
+const statsShowReadingTime = statsConfig.showReadingTime ?? true;
+
+// 标签显示位置
+const tagsPosition = siteConfig.postListLayout.tagsPosition ?? "meta";
+const showTagsInMeta = metaShowTags && tagsPosition === "meta";
+const showTagsAtBottom = metaShowTags && tagsPosition === "bottom";
+// 底部标签样式："chip" 按钮样式，"text" 纯文字无底色
+const bottomTagsAsText =
+	(siteConfig.postListLayout.tagsBottomStyle ?? "chip") === "text";
 const descriptionClampLines = String(descriptionLines);
 const shouldClampDescription = descriptionLines > 0;
 
+// 底部标签：超出 tagCount 的部分折叠成一个 +N 提示，tagCount 为 0 时不限制
+const tagList = tags ?? [];
+const bottomTags = metaTagCount > 0 ? tagList.slice(0, metaTagCount) : tagList;
+const hiddenTags = tagList.slice(bottomTags.length);
+const hiddenTagCount = hiddenTags.length;
+
 const { remarkPluginFrontmatter } = await render(entry);
 const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
+const words = remarkPluginFrontmatter.words;
+const minutes = remarkPluginFrontmatter.minutes;
 ---
 
 <div
@@ -70,6 +106,7 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
     "post-card-wrapper",
     hasCover ? "has-cover" : "no-cover",
     pinned ? "pinned" : "",
+    gridCoverFullWidth ? "" : "grid-cover-inset",
     "card-base flex flex-col-reverse w-full rounded-(--radius-large) overflow-hidden relative",
     className,
   ]}
@@ -99,7 +136,6 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
       {
         password && (
           <Icon
-            is:inline
             name="material-symbols:lock-outline"
             class="inline text-2xl align-middle -translate-y-px"
           />
@@ -111,11 +147,19 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
     <PostMetadata
       published={published}
       tags={tags}
-      showTags={false}
+      showPublished={metaShowPublished}
+      showCategory={showCategory}
+      showTags={showTagsInMeta}
+      maxTags={metaTagCount > 0 ? metaTagCount : undefined}
+      showNoTags={true}
+      hideUpdateDate={true}
       category={category || undefined}
       pinned={pinned}
-      password={password}
-      className="mb-4 post-meta"
+      words={words}
+      minutes={minutes}
+      showWords={metaShowWords}
+      showReadingTime={metaShowReadingTime}
+      className="mb-4 post-meta card-header-meta"
     />
 
     <!-- description -->
@@ -129,30 +173,57 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
       {descriptionText}
     </div>
 
-    <!-- tags -->
-    {
-      showTags && (
-        <div class="text-sm text-black/30 dark:text-white/30 flex flex-wrap gap-2 transition stats pt-3">
-          {tags &&
-            tags.length > 0 &&
-            tags.map((tag, _i) => (
-              <a
-                href={getTagUrl(tag)}
-                aria-label={`View all posts with the ${tag.trim()} tag`}
-                class="btn-regular h-6 text-xs px-2 py-1 rounded-md
-                         transition-all duration-200 hover:scale-105 active:scale-95"
-              >
-                #{tag.trim()}
-              </a>
-            ))}
-          {!(tags && tags.length > 0) && (
-            <span class="text-(--content-meta) text-xs">
-              #{i18n(I18nKey.noTags)}
-            </span>
-          )}
-        </div>
-      )
-    }
+    <!-- bottom tags（与 stats 二选一） -->
+    {showTagsAtBottom && bottomTags.length > 0 && (
+      <div
+        class:list={[
+          "post-card-bottom-tags flex flex-wrap items-center mt-auto pt-3",
+          bottomTagsAsText ? "gap-x-3 gap-y-1" : "gap-1.5",
+        ]}
+      >
+        {bottomTags.map((tag) => (
+          <a
+            href={getTagUrl(tag)}
+            aria-label={`View all posts with the ${tag.trim()} tag`}
+            class:list={[
+              "transition text-xs font-medium",
+              bottomTagsAsText
+                ? "text-50 hover:text-(--primary)"
+                : "tag-item px-2.5 py-1",
+            ]}
+          >
+            #{tag.trim()}
+          </a>
+        ))}
+        {hiddenTagCount > 0 && (
+          <span
+            title={hiddenTags.map((tag) => `#${tag.trim()}`).join(" ")}
+            class:list={[
+              "text-xs font-medium",
+              bottomTagsAsText
+                ? "text-50"
+                : "tag-item tag-item-static px-2.5 py-1",
+            ]}
+          >
+            +{hiddenTagCount}
+          </span>
+        )}
+      </div>
+    )}
+
+    <!-- stats（与底部标签二选一） -->
+    {!showTagsAtBottom && (
+      <PostStats
+        published={published}
+        words={words}
+        minutes={minutes}
+        showPublished={statsShowPublished}
+        showWords={statsShowWords}
+        showReadingTime={statsShowReadingTime}
+        showIcons={siteConfig.postListLayout.showStatsIcons}
+        className="stats mt-auto pt-3 text-black/30 dark:text-white/30 gap-x-2"
+      />
+    )}
   </div>
   {
     hasCover && (
@@ -171,7 +242,6 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
         <div class="absolute pointer-events-none z-10 w-full h-full group-hover:bg-black/30 group-active:bg-black/50 transition" />
         <div class="absolute pointer-events-none z-20 w-full h-full flex items-center justify-center ">
           <Icon
-            is:inline
             name="material-symbols:chevron-right-rounded"
             class="transition opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 text-white text-5xl"
           />
@@ -179,7 +249,7 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
         <CoverImage
           src={processedImage}
           basePath={getFileDirFromPath(entry.filePath || "")}
-          alt="Cover Image of the Post"
+          alt={title}
           class="w-full h-full transition-transform duration-300 group-hover:scale-110 group-active:scale-115"
           preview={true}
           loading={loading}
@@ -202,7 +272,6 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
         ]}
       >
         <Icon
-          is:inline
           name="material-symbols:chevron-right-rounded"
           class="transition text-(--primary) text-4xl mx-auto"
         />
@@ -239,6 +308,17 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
     width: 9rem !important;
     aspect-ratio: auto !important;
     border-radius: 0.75rem !important;
+  }
+
+  /* 封面在左侧：封面改钉左边，内容用 margin-left:auto 推到右边并镜像内边距 */
+  :global(.list-mode.cover-left) .has-cover .post-card-content {
+    margin-left: auto !important;
+    padding: 0.75rem 0.75rem 0.75rem 0.5rem !important;
+  }
+
+  :global(.list-mode.cover-left) .has-cover .post-card-image {
+    right: auto !important;
+    left: 0.5rem !important;
   }
 
   :global(.list-mode) .post-card-title {
@@ -287,6 +367,21 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
       right: 1rem !important;
       width: var(--coverWidth) !important;
       border-radius: 0.75rem !important;
+    }
+
+    /* 封面在左侧：内边距完全镜像右侧模式（靠封面那侧 0.5rem，靠卡片边缘那侧 2.25rem） */
+    :global(.list-mode.cover-left) .has-cover .post-card-content {
+      padding: 1.75rem 2.25rem 1.75rem 0.5rem !important;
+    }
+
+    :global(.list-mode.cover-left) .has-cover .post-card-image {
+      right: auto !important;
+      left: 1rem !important;
+    }
+
+    /* 标题装饰条是贴着卡片左边缘的设计，封面移到左侧后不再成立，直接隐藏 */
+    :global(.list-mode.cover-left) .has-cover .post-card-title::before {
+      display: none !important;
     }
 
     :global(.list-mode) .post-card-title {
@@ -344,6 +439,13 @@ const descriptionText = description || remarkPluginFrontmatter.excerpt || "";
     border-radius: var(--radius-large) var(--radius-large) 0 0 !important;
     max-height: none !important;
     aspect-ratio: 2/1 !important;
+  }
+
+  /* 非贴边：封面按卡片内容区的内边距内缩，跟随 --grid-card-padding 随屏幕变化 */
+  :global(.grid-mode) .post-card-wrapper.grid-cover-inset .post-card-image {
+    width: calc(100% - var(--grid-card-padding, 1rem) * 2) !important;
+    margin: var(--grid-card-padding, 1rem) var(--grid-card-padding, 1rem) 0 !important;
+    border-radius: 0.75rem !important;
   }
 
   :global(.grid-mode) .description {

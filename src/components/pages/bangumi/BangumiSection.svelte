@@ -1,10 +1,12 @@
 <script lang="ts">
 import ClientPagination from "@/components/common/ClientPagination.svelte";
+import FilterControls from "@/components/common/FilterControls.svelte";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import type { UserSubjectCollection } from "@/types/bangumi";
+import type { NsfwMode } from "@/types/nsfw";
+import { filterNsfw, isBangumiNsfw } from "@/utils/nsfw-utils";
 import Card from "./Card.svelte";
-import FilterControls from "./FilterControls.svelte";
 
 interface Props {
 	sectionId: string;
@@ -12,6 +14,7 @@ interface Props {
 	isActive: boolean;
 	itemsPerPage?: number;
 	subjectBaseUrl?: string;
+	nsfw?: NsfwMode; // NSFW 处理："off" | "blur" | "hide"
 }
 
 const {
@@ -20,6 +23,7 @@ const {
 	isActive,
 	itemsPerPage = 24,
 	subjectBaseUrl,
+	nsfw = "off",
 }: Props = $props();
 
 const STATUS_MAP: Record<number, string> = {
@@ -75,9 +79,12 @@ function getFilterLabel(type: "collect" | "doing" | "wish"): string {
 	}
 }
 
+// NSFW 拦截：mode === "hide" 时过滤掉命中条目
+const safeItems = $derived(filterNsfw(items, nsfw, isBangumiNsfw));
+
 const statusCounts = $derived(() => {
 	const counts: Record<string, number> = {};
-	for (const item of items) {
+	for (const item of safeItems) {
 		const status =
 			STATUS_MAP[item.type as keyof typeof STATUS_MAP] || "unknown";
 		counts[status] = (counts[status] || 0) + 1;
@@ -91,7 +98,7 @@ const filters = $derived(() => {
 		{
 			value: "all",
 			label: i18n(I18nKey.bangumiFilterAll),
-			count: items.length,
+			count: safeItems.length,
 		},
 		{
 			value: "collect",
@@ -122,8 +129,8 @@ let currentPage = $state(1);
 
 const filteredItems = $derived(
 	activeFilter === "all"
-		? items
-		: items.filter(
+		? safeItems
+		: safeItems.filter(
 				(item) =>
 					(STATUS_MAP[item.type as keyof typeof STATUS_MAP] || "unknown") ===
 					activeFilter,
@@ -153,22 +160,22 @@ function goToPage(page: number) {
 }
 </script>
 
-<div class="bangumi-section" class:hidden={!isActive} data-section={sectionId}>
-  {#if items.length > 0}
+<div class="media-section" class:hidden={!isActive} data-section={sectionId}>
+  {#if safeItems.length > 0}
     <FilterControls
       filters={filters()}
       activeFilter={activeFilter}
       onFilterChange={handleFilterChange}
     />
 
-    <div class="bangumi-masonry grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+    <div class="media-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
       {#each pagedItems as item (item.subject_id)}
         <div
-          class="bangumi-item"
+          class="media-item"
           data-item-section={sectionId}
           data-item-status={STATUS_MAP[item.type as keyof typeof STATUS_MAP] || "unknown"}
         >
-          <Card item={item} loadImage={isActive} {subjectBaseUrl} />
+          <Card item={item} loadImage={isActive} {subjectBaseUrl} {nsfw} />
         </div>
       {/each}
     </div>

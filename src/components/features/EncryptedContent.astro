@@ -33,7 +33,7 @@ const labels = {
   <!-- Lock UI -->
   <div id="password-ui" class="flex justify-center py-16 px-4">
     <div class="card-base flex flex-col items-center gap-3 max-w-100 w-full p-8">
-      <Icon is:inline name="material-symbols:shield-lock" class="text-8xl text-(--primary)" />
+      <Icon name="material-symbols:shield-lock" class="text-8xl text-(--primary)" />
 
       <h2 class="text-lg font-bold text-black/80 dark:text-white/80 m-0">{labels.protected}</h2>
       <p class="text-sm text-black/40 dark:text-white/40 text-center m-0">{labels.desc}</p>
@@ -52,7 +52,7 @@ const labels = {
           class="w-full px-3 py-2 rounded-lg text-sm bg-black/5 dark:bg-white/10
                  border border-black/8 dark:border-white/8
                  text-black/80 dark:text-white/80 placeholder-black/25 dark:placeholder-white/25
-                 outline-none focus:border-(--primary) transition"
+                 outline-hidden focus:border-(--primary) transition"
         />
         <button
           type="submit"
@@ -96,10 +96,6 @@ const labels = {
     contentEl.classList.remove('hidden');
     ui.classList.add('hidden');
     // Scripts injected via innerHTML are inert — re-create them so they execute
-    // Reset mermaid singleton so its render script re-initializes after decryption
-    if (typeof window.mermaidInitialized !== 'undefined') {
-      window.mermaidInitialized = false;
-    }
     var scripts = contentEl.querySelectorAll('script');
     for (var i = 0; i < scripts.length; i++) {
       var old = scripts[i];

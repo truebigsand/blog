@@ -1,6 +1,4 @@
 {
-  "src:assets/images/firefly.png": "72d3af9ee699aced93",
-  "src:assets/images/cover.avif": "7c6f966a628a816e82",
   "src:assets/images/avatar.avif": "dcd8d5d1cecabea9a9",
   "src:assets/images/MobileWallpaper/m6.avif": "a08eaac3abbfc7bdc8",
   "src:assets/images/MobileWallpaper/m5.avif": "af99aecab1c1d2c2cb",
@@ -29,5 +27,7 @@
   "src:content/posts/fu-wu-qi-ji-lu/images/旧服务器-CPU.jpg": "6e6f657e756c6d6157",
   "src:content/posts/fu-wu-qi-ji-lu/images/新服务器-背面.jpg": "61635f65696c666562",
   "src:content/posts/fu-wu-qi-ji-lu/images/新服务器-正面.jpg": "6b6b69433f3e322f2d",
-  "src:content/posts/fu-wu-qi-ji-lu/images/新服务器-CPU.jpg": "858991b2a9aa63595b"
+  "src:content/posts/fu-wu-qi-ji-lu/images/新服务器-CPU.jpg": "858991b2a9aa63595b",
+  "src:assets/images/logo/firefly-light.png": "000000000000000000",
+  "src:assets/images/logo/firefly-dark.png": "ffffffffffffffffff"
 }

@@ -62,15 +62,15 @@ const postUrlPrefix = url("/posts/");
   <div class="calendar-container">
     <div class="flex justify-between items-center mb-2">
         <button id="prev-month-btn" class="btn-plain rounded-lg w-8 h-8 flex items-center justify-center hover:bg-(--btn-plain-bg-hover) transition-colors" aria-label="Previous Month">
-            <Icon is:inline name="fa7-solid:chevron-left" class="text-sm" />
+            <Icon name="fa7-solid:chevron-left" class="text-sm" />
         </button>
         <div id="current-month-display" class="text-lg font-bold text-neutral-900 dark:text-neutral-100 cursor-pointer hover:text-(--primary) transition-colors select-none"></div>
         <div class="flex gap-2">
             <button id="reset-month-btn" class="btn-plain rounded-lg w-8 h-8 flex items-center justify-center hover:bg-(--btn-plain-bg-hover) transition-colors" aria-label="Back to Today">
-                <Icon is:inline name="fa7-solid:arrow-rotate-left" class="text-sm" />
+                <Icon name="fa7-solid:arrow-rotate-left" class="text-sm" />
             </button>
             <button id="next-month-btn" class="btn-plain rounded-lg w-8 h-8 flex items-center justify-center hover:bg-(--btn-plain-bg-hover) transition-colors" aria-label="Next Month">
-                <Icon is:inline name="fa7-solid:chevron-right" class="text-sm" />
+                <Icon name="fa7-solid:chevron-right" class="text-sm" />
             </button>
         </div>
     </div>
@@ -354,7 +354,7 @@ const postUrlPrefix = url("/posts/");
     calendarGrid.innerHTML = calendarDays.map(({day, hasPost, count, dateKey}) => {
       const isToday = day === currentDate && isCurrentMonth;
       const classes = [
-        "calendar-day aspect-square flex items-center justify-center rounded text-sm relative cursor-pointer"
+        "calendar-day aspect-square flex items-center justify-center rounded-sm text-sm relative cursor-pointer"
       ];
       
       if (!day) {
@@ -412,7 +412,7 @@ const postUrlPrefix = url("/posts/");
       const isCurrent = index === displayMonth;
       const hasPost = monthsWithPosts.has(index);
       const classes = [
-        "p-2 text-center text-sm rounded cursor-pointer hover:bg-(--btn-plain-bg-hover) transition-colors relative"
+        "p-2 text-center text-sm rounded-sm cursor-pointer hover:bg-(--btn-plain-bg-hover) transition-colors relative"
       ];
       if (isCurrent) {
         classes.push("text-(--primary) font-bold bg-(--btn-plain-bg-hover)");
@@ -441,7 +441,7 @@ const postUrlPrefix = url("/posts/");
     container.innerHTML = availableYears.map(year => {
       const isCurrent = year === displayYear;
       const classes = [
-        "p-2 text-center text-sm rounded cursor-pointer hover:bg-(--btn-plain-bg-hover) transition-colors relative"
+        "p-2 text-center text-sm rounded-sm cursor-pointer hover:bg-(--btn-plain-bg-hover) transition-colors relative"
       ];
       if (isCurrent) {
         classes.push("text-(--primary) font-bold bg-(--btn-plain-bg-hover)");
@@ -475,7 +475,7 @@ const postUrlPrefix = url("/posts/");
         const date = new Date(post.published);
         const dateStr = `${date.getMonth() + 1}-${date.getDate()}`;
         return `
-        <a href="${postUrlPrefix}${post.id}/" class="flex justify-between items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-(--primary) dark:hover:text-(--primary) transition-colors px-2 py-1 rounded hover:bg-(--btn-plain-bg-hover)">
+        <a href="${postUrlPrefix}${post.id}/" class="flex justify-between items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-(--primary) dark:hover:text-(--primary) transition-colors px-2 py-1 rounded-sm hover:bg-(--btn-plain-bg-hover)">
           <span class="truncate">${post.title}</span>
           <span class="text-xs text-neutral-500 dark:text-neutral-400 ml-2 whitespace-nowrap">${dateStr}</span>
         </a>
@@ -535,7 +535,7 @@ const postUrlPrefix = url("/posts/");
             const date = new Date(post.published);
             const dateStr = `${date.getMonth() + 1}-${date.getDate()}`;
             return `
-            <a href="${postUrlPrefix}${post.id}/" class="flex justify-between items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-(--primary) dark:hover:text-(--primary) transition-colors px-2 py-1 rounded hover:bg-(--btn-plain-bg-hover)">
+            <a href="${postUrlPrefix}${post.id}/" class="flex justify-between items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-(--primary) dark:hover:text-(--primary) transition-colors px-2 py-1 rounded-sm hover:bg-(--btn-plain-bg-hover)">
               <span class="truncate">${post.title}</span>
               <span class="text-xs text-neutral-500 dark:text-neutral-400 ml-2 whitespace-nowrap">${dateStr}</span>
             </a>
@@ -607,10 +607,14 @@ const postUrlPrefix = url("/posts/");
   // 页面加载时渲染日历
   initCalendar();
 
-  // 页面切换时重新渲染
-  document.addEventListener("swup:contentReplaced", () => {
-    setTimeout(initCalendar, 100);
-  });
+  // 防止 Swup 切页重跑脚本时重复注册监听器（此脚本的 data-swup-ignore-script 在 define:vars 构建时可能丢失）
+  if (!window.__calendarInit) {
+    window.__calendarInit = true;
+    // 页面切换时重新渲染
+    document.addEventListener("swup:contentReplaced", () => {
+      setTimeout(initCalendar, 100);
+    });
+  }
 </script>
 
 <style>

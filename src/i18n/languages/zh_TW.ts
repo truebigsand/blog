@@ -13,17 +13,44 @@ export const zh_TW: Translation = {
 	[Key.searchContent]: "內容",
 	[Key.searchViewMore]: "查看更多結果 ({count} 個更多)",
 	[Key.other]: "其他",
+
+	// 導覽列選單分組
+	[Key.navArticles]: "文章",
+	[Key.navSocial]: "社交",
+	[Key.navMine]: "我的",
+	[Key.navAbout]: "關於",
+	[Key.navLinks]: "連結",
 	[Key.all]: "全部",
 
 	[Key.tags]: "標籤",
 	[Key.categories]: "分類",
 	[Key.allCategories]: "全部分類",
 	[Key.allTags]: "全部標籤",
+	[Key.allSeries]: "全部系列",
 	[Key.recentPosts]: "最新文章",
 	[Key.postList]: "文章列表",
 	[Key.tableOfContents]: "文章目錄",
 	[Key.tocEmpty]: "目前頁面沒有目錄",
 	[Key.music]: "音樂",
+	[Key.dynamic]: "動態",
+	[Key.latestDynamics]: "最新動態",
+	[Key.moreDynamics]: "更多動態",
+	[Key.dynamicDescription]: "隨手記下此刻的想法與日常。",
+	[Key.dynamicEmpty]: "還沒有發佈動態",
+	[Key.dynamicSearch]: "搜尋動態...",
+	[Key.dynamicNoResults]: "沒有找到符合的動態",
+	[Key.dynamicLoading]: "正在載入動態",
+	[Key.dynamicAllYears]: "全部年份",
+	[Key.dynamicLoadMore]: "載入更多",
+	[Key.dynamicBackToList]: "返回動態列表",
+	[Key.dynamicProfile]: "查看 {name} 的資料",
+	[Key.dynamicPermalink]: "此動態的固定連結",
+	[Key.dynamicCollapseGallery]: "收起",
+	[Key.dynamicViewOriginal]: "查看大圖",
+	[Key.dynamicPreviousImage]: "上一張圖片",
+	[Key.dynamicNextImage]: "下一張圖片",
+	[Key.dynamicViewImage]: "查看圖片 {index}",
+	[Key.dynamicSelectImage]: "切換到圖片 {index}",
 	[Key.musicNoPlaying]: "暫未播放",
 	[Key.musicLyrics]: "歌詞",
 	[Key.musicVolume]: "音量",
@@ -57,6 +84,22 @@ export const zh_TW: Translation = {
 	[Key.friendsDescription]: "這裡是我的朋友們，歡迎互相訪問交流",
 	[Key.searchFriends]: "搜尋友鏈...",
 	[Key.friendsEmpty]: "暫無友情連結",
+	[Key.booknav]: "書籤導航",
+	[Key.booknavDescription]: "收藏一些好用的網站，按分類整理",
+	[Key.searchBooknav]: "搜尋書籤...",
+	[Key.booknavEmpty]: "暫無書籤",
+
+	// 專案展示頁
+	[Key.projects]: "專案",
+	[Key.projectsDescription]: "這裡展示我開發過的專案",
+	[Key.projectDetails]: "查看詳情",
+	[Key.projectBack]: "返回專案列表",
+	[Key.projectEmpty]: "暫無專案",
+	[Key.projectSearch]: "搜尋專案",
+	[Key.projectStatusPlanning]: "規劃中",
+	[Key.projectStatusDeveloping]: "開發中",
+	[Key.projectStatusPublished]: "已發佈",
+	[Key.projectStatusArchived]: "已封存",
 	[Key.guestbook]: "留言",
 	[Key.guestbookDescription]: "歡迎在這裡留下你的足跡，分享你的想法和建議",
 	[Key.untitled]: "無標題",
@@ -147,13 +190,50 @@ export const zh_TW: Translation = {
 	[Key.bangumiCategoryReal]: "三次元",
 
 	// 番組數據更新
-	[Key.bangumiLastUpdated]: "數據更新於",
+	[Key.bangumiLastUpdated]: "資料更新日期",
 	[Key.bangumiUpdatedAt]: "構建時間",
 	[Key.bangumiDataStatic]: "靜態數據",
 
-	// 追番
-	[Key.anime]: "追番",
-	[Key.animeSubtitle]: "我的追番列表，數據來自 Bilibili 和 TMDB",
+	// VNDB
+	[Key.vndb]: "VNDB",
+	[Key.vndbSubtitle]: "我的 VNDB 視覺小說列表",
+	[Key.vndbFilterAll]: "全部",
+	[Key.vndbFilterVoted]: "已評分",
+	[Key.vndbFilterUnvoted]: "未評分",
+	[Key.vndbFilterNotes]: "有筆記",
+	[Key.vndbStatusWishlist]: "想玩",
+	[Key.vndbStatusPlaying]: "在玩",
+	[Key.vndbStatusFinished]: "已玩",
+	[Key.vndbStatusStalled]: "擱置",
+	[Key.vndbStatusDropped]: "拋棄",
+	[Key.vndbStatusUnknown]: "未知",
+	[Key.vndbNoData]: "暫無數據",
+	[Key.vndbNoDataDescription]: "該分類下還沒有任何條目",
+	[Key.vndbEmpty]: "暫無數據",
+	[Key.vndbEmptyReason]:
+		"可能的原因：用戶 ID 不存在、列表為私密、網絡連接問題或 API 限制",
+	[Key.vndbFetchError]: "VNDB 資料拉取失敗",
+	[Key.vndbFetchErrorDesc]:
+		"構建時從 VNDB API 獲取資料失敗，該頁面內容暫不可用。",
+	[Key.vndbNotConfigured]: "未配置 VNDB 用戶ID",
+	[Key.vndbNotConfiguredDesc]:
+		"請在 src/config/siteConfig.ts 中配置你的 VNDB 用戶ID",
+	[Key.vndbLastUpdated]: "資料更新日期",
+	[Key.vndbVotes]: "票",
+	[Key.vndbLengthVeryShort]: "極短",
+	[Key.vndbLengthShort]: "短",
+	[Key.vndbLengthMedium]: "中等",
+	[Key.vndbLengthLong]: "長",
+	[Key.vndbLengthVeryLong]: "極長",
+
+	// 追番 - Bilibili
+	[Key.bilibili]: "嗶哩嗶哩",
+	[Key.bilibiliSubtitle]: "我的嗶哩嗶哩追番與追劇列表",
+	[Key.bilibiliNotConfigured]: "未配置嗶哩嗶哩資料來源",
+	[Key.bilibiliNotConfiguredDesc]:
+		"請在 src/config/siteConfig.ts 中配置 bilibili.uid",
+
+	// 追番 - 公共組件
 	[Key.animeTotal]: "總追番",
 	[Key.animeAverageRating]: "平均評分",
 	[Key.animeSearch]: "搜尋番劇...",
@@ -165,21 +245,14 @@ export const zh_TW: Translation = {
 	[Key.animeDateDesc]: "最新發布",
 	[Key.animeDateAsc]: "最早發布",
 	[Key.animeNoResults]: "沒有找到匹配的番劇",
-	[Key.animeLastUpdated]: "數據更新於",
-	[Key.animeSource]: "數據來源",
+	[Key.animeLastUpdated]: "資料更新日期",
 	[Key.animeEpStatus]: "進度",
 	[Key.animeViewDetails]: "查看詳情",
-	[Key.animeNotConfigured]: "未配置追番資料來源",
-	[Key.animeNotConfiguredDesc]:
-		"請在 src/config/siteConfig.ts 中配置 Bilibili UID 或 TMDB API Key",
 	[Key.animeBilibiliAvg]: "Bilibili 均分",
-	[Key.animeTmdbAvg]: "TMDB 均分",
-	[Key.animeDualSynced]: "雙源已同步",
 	[Key.animeNoOverview]: "暫無簡介",
 	[Key.animeClose]: "關閉",
 	[Key.animeSynopsis]: "劇情簡介",
 	[Key.animeWatchNow]: "立即觀看",
-	[Key.animeViewTmdb]: "查看 TMDB 詳情",
 	[Key.animeAllWithCount]: "全部 ({count})",
 	[Key.animeTVWithCount]: "TV ({count})",
 	[Key.animeMovieWithCount]: "電影 ({count})",
@@ -190,6 +263,36 @@ export const zh_TW: Translation = {
 	[Key.animeTypeDrama]: "電視劇",
 	[Key.animeTypeConcert]: "演唱會",
 
+	// MyAnimeList
+	[Key.mal]: "MyAnimeList",
+	[Key.malSubtitle]: "我的 MyAnimeList 動畫與漫畫列表",
+	[Key.malCategoryAnime]: "動畫",
+	[Key.malCategoryManga]: "漫畫",
+	[Key.malFilterAll]: "全部",
+	[Key.malStatusWatching]: "在看",
+	[Key.malStatusReading]: "在讀",
+	[Key.malStatusCompleted]: "已看完",
+	[Key.malStatusOnHold]: "擱置",
+	[Key.malStatusDropped]: "拋棄",
+	[Key.malStatusPlanToWatch]: "想看",
+	[Key.malStatusPlanToRead]: "想讀",
+	[Key.malNoData]: "暫無數據",
+	[Key.malNoDataDescription]: "該分類下還沒有任何條目",
+	[Key.malEmpty]: "暫無數據",
+	[Key.malEmptyReason]:
+		"可能的原因：用戶名不存在、列表為私密、Client ID 無效或網絡連接問題",
+	[Key.malFetchError]: "MyAnimeList 資料拉取失敗",
+	[Key.malFetchErrorDesc]:
+		"構建時從 MyAnimeList API 獲取資料失敗。請確認用戶名和 Client ID 正確，且列表為公開狀態。",
+	[Key.malNotConfigured]: "未配置 MyAnimeList 用戶資訊",
+	[Key.malNotConfiguredDesc]:
+		"請在 src/config/siteConfig.ts 中配置你的 MyAnimeList 用戶名和 Client ID（列表需為公開狀態）",
+	[Key.malLastUpdated]: "資料更新日期",
+	[Key.malSeasonWinter]: "冬季",
+	[Key.malSeasonSpring]: "春季",
+	[Key.malSeasonSummer]: "夏季",
+	[Key.malSeasonFall]: "秋季",
+
 	// 分頁
 	[Key.paginationFirst]: "首頁",
 	[Key.paginationPrev]: "上一頁",
@@ -199,6 +302,7 @@ export const zh_TW: Translation = {
 	[Key.paginationOf]: "頁，共",
 	[Key.paginationTotal]: "頁，總計",
 	[Key.paginationRecords]: "條記錄",
+	[Key.paginationJump]: "跳轉到指定頁",
 
 	// 404頁面
 	[Key.notFound]: "404",
@@ -224,6 +328,14 @@ export const zh_TW: Translation = {
 	[Key.rssHowToUse]: "推薦使用 Feedly、Inoreader 或其他 RSS 閱讀器來訂閱本站。",
 	[Key.rssCopied]: "RSS 鏈接已複製到剪貼板！",
 	[Key.rssCopyFailed]: "複製失敗，請手動複製鏈接",
+
+	// Atom 頁面
+	[Key.atom]: "Atom 訂閱",
+	[Key.atomDescription]: "訂閱獲取最新更新",
+	[Key.atomSubtitle]: "透過 Atom 訂閱，第一時間獲取最新文章和動態",
+	[Key.atomLink]: "Atom 連結",
+	[Key.atomCopyToReader]: "複製連結到你的 Atom 閱讀器",
+	[Key.atomCopied]: "Atom 連結已複製到剪貼簿！",
 
 	//最後編輯時間卡片
 	[Key.lastModifiedPrefix]: "最後更新於 ",
@@ -252,6 +364,13 @@ export const zh_TW: Translation = {
 	[Key.noRelatedPosts]: "暫無相關文章",
 	[Key.noRandomPosts]: "暫無隨機文章",
 
+	// 文章系列
+	[Key.series]: "系列",
+	[Key.seriesPartOf]: "所屬系列",
+	[Key.seriesPart]: "第 {n} 篇",
+	[Key.seriesThisArticle]: "本文",
+	[Key.noSeries]: "暫無系列",
+
 	// 加密
 	[Key.postEncrypted]: "本文已加密",
 
@@ -259,7 +378,10 @@ export const zh_TW: Translation = {
 	[Key.wallpaperMode]: "壁紙模式",
 	[Key.wallpaperBannerMode]: "橫幅壁紙",
 	[Key.wallpaperFullscreenMode]: "全屏壁紙",
-	[Key.wallpaperOverlayMode]: "全屏透明",
+	[Key.fullscreenLayout]: "全屏佈局",
+	[Key.fullscreenClassicLayout]: "經典模式",
+	[Key.fullscreenHeroLayout]: "Hero 模式",
+	[Key.wallpaperOverlayMode]: "覆蓋透明",
 	[Key.wallpaperNoneMode]: "純色背景",
 
 	// 壁紙設置
@@ -274,6 +396,16 @@ export const zh_TW: Translation = {
 	[Key.overlayOpacity]: "桌布透明度",
 	[Key.overlayBlur]: "背景模糊度",
 	[Key.overlayCardOpacity]: "卡片透明度",
+
+	// 設定面板標籤
+	[Key.settingsTabAppearance]: "外觀",
+	[Key.settingsTabWallpaper]: "壁紙",
+	[Key.settingsTabEffects]: "特效",
+
+	// 卡片樣式
+	[Key.cardSettings]: "卡片樣式",
+	[Key.cardBorder]: "卡片邊框和陰影",
+	[Key.cardFollowTheme]: "卡片跟隨主題色",
 
 	// 文章佈局
 	[Key.postListLayout]: "文章佈局",
@@ -304,6 +436,7 @@ export const zh_TW: Translation = {
 	// 站點統計
 	[Key.siteStats]: "站點統計",
 	[Key.siteStatsPostCount]: "文章",
+	[Key.siteStatsDynamicCount]: "動態",
 	[Key.siteStatsCategoryCount]: "分類",
 	[Key.siteStatsTagCount]: "標籤",
 	[Key.siteStatsTotalWords]: "總字數",
@@ -371,6 +504,7 @@ export const zh_TW: Translation = {
 	[Key.galleryAlbums]: "本相簿",
 	[Key.galleryNoAlbums]: "暫無相簿",
 	[Key.galleryBackToAlbums]: "返回相簿列表",
+	[Key.galleryEnterAlbum]: "進入相簿",
 	[Key.searchAlbums]: "搜尋相簿...",
 
 	// 密碼保護
@@ -388,4 +522,11 @@ export const zh_TW: Translation = {
 	[Key.videoPrev]: "上一個影片",
 	[Key.videoNext]: "下一個影片",
 	[Key.videoLoadError]: "影片載入失敗",
+
+	// 沉浸閱讀
+	[Key.immersiveReading]: "沉浸閱讀",
+	[Key.enterImmersiveReading]: "進入沉浸閱讀",
+	[Key.exitImmersiveReading]: "退出沉浸閱讀",
+	[Key.tocExpand]: "展開目錄",
+	[Key.tocCollapse]: "摺疊目錄",
 };

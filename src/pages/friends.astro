@@ -12,6 +12,8 @@ import {
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import "@/styles/pages/common.css";
+import "@/styles/pages/friends.css";
 
 // 检查页面是否启用
 if (!siteConfig.pages.friends) {
@@ -49,23 +51,15 @@ const description =
     <div class="card-base z-10 px-9 py-6 relative w-full">
       <!-- 页面标题和描述 -->
       <div class="mb-4">
-        <div class="flex items-center gap-3 mb-3">
-          <div
-            class="h-8 w-8 rounded-lg bg-(--primary) flex items-center justify-center text-white dark:text-black/70"
-          >
-            <Icon is:inline name="material-symbols:group" class="text-[1.5rem]" />
+        <div class="page-heading">
+          <div class="page-icon" aria-hidden="true">
+            <Icon name="material-symbols:group" />
           </div>
-          <div class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
-            {title}
+          <div>
+            <h2>{title}</h2>
+            {description && <p>{description}</p>}
           </div>
         </div>
-        {
-          description && (
-            <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
-              {description}
-            </p>
-          )
-        }
       </div>
 
       <!-- 搜索框 -->
@@ -73,7 +67,7 @@ const description =
         items.length > 0 && (
           <friend-filter class="mb-6">
             <div class="relative mb-3">
-              <Icon is:inline
+              <Icon
                 name="material-symbols:search"
                 class="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 dark:text-neutral-500 text-lg pointer-events-none"
               />
@@ -87,14 +81,15 @@ const description =
             <div class="flex flex-wrap gap-2">
               <button
                 data-tag="all"
-                class="btn-regular px-3 py-1.5 rounded-lg bg-(--primary) text-white hover:bg-(--primary) transition-colors duration-200 text-sm font-medium"
+                class="category-pill px-3 py-1.5 rounded-full text-sm font-medium transition-colors duration-200"
+                data-active
               >
                 {i18n(I18nKey.all)}
               </button>
               {allTags.map((tag) => (
                 <button
                   data-tag={tag}
-                  class="btn-regular px-3 py-1.5 rounded-lg bg-(--btn-regular-bg) text-(--btn-content) hover:bg-(--btn-regular-bg-hover) transition-colors duration-200 text-sm font-medium"
+                  class="category-pill px-3 py-1.5 rounded-full text-sm font-medium transition-colors duration-200"
                 >
                   {tag}
                 </button>
@@ -108,7 +103,7 @@ const description =
         {
           items.length === 0 && (
             <div class="col-span-full flex flex-col items-center justify-center py-12 text-neutral-400 dark:text-neutral-500">
-              <Icon is:inline name="material-symbols:group-off-outline" class="text-4xl mb-3" />
+              <Icon name="material-symbols:group-off-outline" class="text-4xl mb-3" />
               <div class="text-sm">{i18n(I18nKey.friendsEmpty)}</div>
             </div>
           )
@@ -125,6 +120,12 @@ const description =
               {/* 背景装饰 - 仅悬停显示 */}
               <div class="absolute inset-0 bg-(--primary) opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none" />
 
+              {/* 外部链接图标 - 固定在卡片右上角 */}
+              <Icon
+                name="material-symbols:arrow-outward-rounded"
+                class="absolute top-3 right-3 text-(--primary) text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+              />
+
               {/* 头像 */}
               <div class="relative w-16 h-16 shrink-0 rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 border border-black/5 dark:border-white/5 group-hover:scale-105 transition-transform duration-300">
                 <img
@@ -136,15 +137,8 @@ const description =
 
               {/* 内容 */}
               <div class="grow min-w-0 flex flex-col justify-center gap-0.5">
-                <div class="flex items-center justify-between">
-                  <div class="font-bold text-base text-neutral-900 dark:text-neutral-100 group-hover:text-(--primary) transition-colors truncate pr-4">
-                    {item.title}
-                  </div>
-                  {/* 外部链接图标 */}
-                  <Icon is:inline
-                    name="material-symbols:arrow-outward-rounded"
-                    class="text-(--primary) text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
-                  />
+                <div class="font-bold text-base text-neutral-900 dark:text-neutral-100 group-hover:text-(--primary) transition-colors truncate pr-4">
+                  {item.title}
                 </div>
 
                 <div
@@ -174,7 +168,7 @@ const description =
 
       {/* 搜索无结果提示 */}
       <div class="friends-empty hidden flex-col items-center justify-center py-12 text-neutral-400 dark:text-neutral-500">
-        <Icon is:inline name="material-symbols:search-off-rounded" class="text-4xl mb-3" />
+        <Icon name="material-symbols:search-off-rounded" class="text-4xl mb-3" />
         <div class="text-sm">{i18n(I18nKey.searchNoResults)}</div>
       </div>
     </div>
@@ -225,18 +219,9 @@ const description =
           const filters = this.querySelectorAll("button");
 
           filters.forEach((f) => {
-            f.classList.remove("bg-(--primary)", "text-white");
-            f.classList.remove("hover:bg-(--primary)");
-            f.classList.add("bg-(--btn-regular-bg)", "text-(--btn-content)");
-            f.classList.add("hover:bg-(--btn-regular-bg-hover)");
-
-            if (f === button) {
-              f.classList.remove("bg-(--btn-regular-bg)", "text-(--btn-content)");
-              f.classList.remove("hover:bg-(--btn-regular-bg-hover)");
-              f.classList.add("bg-(--primary)", "text-white");
-              f.classList.add("hover:bg-(--primary)");
-            }
+            f.removeAttribute("data-active");
           });
+          button.setAttribute("data-active", "");
 
           this.applyFilters();
         }
@@ -287,11 +272,4 @@ const description =
     }
   </script>
 
-  <style is:global>
-    .friends-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 0.75rem;
-    }
-  </style>
 </MainGridLayout>
